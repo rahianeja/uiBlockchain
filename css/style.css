@@ -109,14 +109,17 @@ div#contentBottom {
 
 .square {
 
-    width: 50vw;
-    height: 50vw;
 }
 .square h1 {
     color: #fff;
 }
 .truckBox{
-  background-color:#1F8DD6
+  background-color:#1F8DD6;
+  width:200px;
+      display: table-cell;
+      border-radius: 20px;
+text-align: center;
+color: white;
 }
 
 /*base code*/

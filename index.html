@@ -6,11 +6,28 @@
 
 
   <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css'>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
 
-      <link rel="stylesheet" href="css/style.css">
+
+  $( document ).ready(function() {
+      console.log( "ready!" );
+
+  $.ajax({url: "http://10.70.1.8:7050/chain/blocks/85", success: function(result){
+      //  $("#containerForTrucks").text(JSON.stringify(result));
+    }});
 
 
-</head>
+  });
+
+
+
+
+
+
+  </script>
+  </head>
 
 <body>
   <title>Blockchain Transactions</title>
@@ -50,13 +67,24 @@
       <div class="menu-trigger" data-anijs="if: click, do: $toggleClass menu-active, to: .container">
         <i class="fa fa-bars"></i>
       </div>
-      <h1>GenX chemicals co.</h1>
+      <h1>Blockchain track and trace portal</h1>
       <p>Track and trace truck movement and location below</p>
 
-      <div class="square">
+      <div id="containerForTrucks" class="square">
           <h1>This is a Container</h1>
+          <img src="images/transkd.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <img src="images/transkd.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <img src="images/transkd.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <img src="images/transkd.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Truck 1 <br>
+                <div data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Location: </div>
+                <div data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Long: </div>
+                <div data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Lat: </div>
+              </div>
 
-          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Truck 1 </div>
+          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Truck 2 </div>
+          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Truck 3 </div>
+          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Truck 4 </div>
       </div>
 
     </div>
