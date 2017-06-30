@@ -108,7 +108,9 @@ div#contentBottom {
 }
 
 .square {
-
+  background-color: #636A73;
+  width: 70%;
+padding: 30px;
 }
 .square h1 {
     color: #fff;
@@ -193,19 +195,24 @@ color: white;
   animation-timing-function: ease-out
 }
 
+.whtTitle{
+  color: white;
+}
 
 /*
   Content
 */
 div#content {
+    overflow: auto !important;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 90%;
   padding: 60px;
+  padding-top: 13px;
   overflow: scroll;
-  background: #dfe5eb;
+  background: #333B47;
   border-radius: 0;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
