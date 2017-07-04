@@ -8,23 +8,22 @@
   <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css'>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel='stylesheet' href='css/main.css'>
+  <script src="js/blockchain.js"></script>
+  <script src="js/funk.js"></script>
+  <script src="js/bchain.js"></script>
   <script>
 
 
   $( document ).ready(function() {
       console.log( "ready!" );
-
-  $.ajax({url: "http://10.70.1.8:7050/chain/blocks/85", success: function(result){
-      //  $("#containerForTrucks").text(JSON.stringify(result));
-    }});
-
+      onLoad();
 
   });
 
 
 
-
-
+;
 
   </script>
   </head>
@@ -39,61 +38,67 @@
   <div class="container center">
      <!-- Navigation -->
     <nav id="slide-menu">
-      <ul>
-        <li class="timeline">
-          <i class="fa fa-bar-chart"></i>
-          <span>Timeline</span>
-        </li>
-        <li class="events">
-          <i class="fa fa-flag"></i>
-          <span>Events</span>
-        </li>
-        <li class="calendar">
-          <i class="fa fa-calendar-o"></i>
-          <span>Calendar</span>
-        </li>
-        <li class="sep settings">
-          <i class="fa fa-gear"></i>
-          <span>Settings</span>
-        </li>
-        <li class="logout">
-          <i class="fa fa-close"></i>
-          <span>Logout</span>
-        </li>
-      </ul>
+      <h2 class="sideTitleHeading">Transactions</h2>
+
+      <div class="sideContent">
+        <ul class="txContent"></ul>
+        <!-- <ul>
+          <li class="timeline">
+            <i class="fa fa-bar-chart"></i>
+            <span>Timeline</span>
+          </li>
+          <li class="events">
+            <i class="fa fa-flag"></i>
+            <span>Events</span>
+          </li>
+          <li class="calendar">
+            <i class="fa fa-calendar-o"></i>
+            <span>Calendar</span>
+          </li>
+          <li class="sep settings">
+            <i class="fa fa-gear"></i>
+            <span>Settings</span>
+          </li>
+          <li class="logout">
+            <i class="fa fa-close"></i>
+            <span>Logout</span>
+          </li>
+        </ul> -->
+
+      </div>
+
     </nav>
     <!-- Content panel -->
-    <div id="content" class="bgDark">
+    <div id="content" class="bgDark" data-anijs="if: DOMContentLoaded, on: document, do: $addClass menu-active, to: .container">
       <div class="menu-trigger" data-anijs="if: click, do: $toggleClass menu-active, to: .container">
         <i class="fa fa-bars"></i>
       </div>
-      <h1>Blockchain Monitor</h1>
-      <p>Track and trace truck movement and location below</p>
+      <h1 class="titlePadBottom">Blockchain Monitor</h1>
 
       <div id="containerForTrucks" class="square">
-          <h2 class="whtTitle">Trucks - 4/4</h2>
+          <h2 class="whtTitle">Trucks - 4/4</h2><br>
           <img src="images/transkd.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <img src="images/transkd.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <img src="images/transkd.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <img src="images/transkd.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
-          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Truck 1 <br>
-                <div data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Location: </div>
-                <div data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Long: </div>
-                <div data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Lat: </div>
-              </div>
-
-          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Truck 2 </div>
-          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Truck 3 </div>
-          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"> Truck 4 </div>
+          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck1Title"> Truck 1</div>
+          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck2Title"> Truck 2 </div>
+          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck3Title"> Truck 3 </div>
+          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck4Title"> Truck 4 </div>
       </div>
 
     </div>
-    <div id="contentBottom" class="bgDark">
 
-      <h1>All blocks</h1>
+    <div id="footerPanel" style="height: 9%;">
+        <div id="blockWrap">
+            <div id="blockLegend" style="padding-top: .5%;">BLOCKS</div>
+            <div id="details"></div>
+        </div>
 
 
     </div>
+
+
   </div>
 
   <!-- End example -->
