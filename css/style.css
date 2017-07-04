@@ -22,8 +22,38 @@ h1, h2, h3 {
   color: white;
   margin: 0 0 27px;
 }
+.notif{
+      float: right;
+}
+.err{
+  color: red;
+}
+.error {
+    width: 200px;
+    height: 20px;
+    height: auto;
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    margin-left: 74px;
+    top: 78px;
+    background-color: #383838;
+    color: #F0F0F0;
+    font-family: Calibri;
+    font-size: 20px;
+    padding:10px;
+    text-align:center;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+    -moz-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+    box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+}
+
 .titlePadBottom{
   margin-bottom: 25px;
+  font-size: -webkit-xxx-large;
+font-weight: bold;
+color: white;
 }
 
 .timeline{
@@ -31,6 +61,8 @@ h1, h2, h3 {
   padding: 10px;
       margin-top: 10px;
 }
+
+
 
 .truckData{
   font-size: 12px;

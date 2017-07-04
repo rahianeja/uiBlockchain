@@ -147,7 +147,7 @@ function onLoad(){
        updateTruckDataToUI(responseJson, i);
  },
       error: function(err){
-        alert(err);
+        console.log(err);
       }});
 
   }
@@ -190,26 +190,42 @@ function onLoad(){
     .append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" );
 
     if(data.Truck1.shock>2.8){
-      alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
+      $.ajax({
+        url: 'https://jleiphonebook.firebaseio.com/.json',
+        type: "POST",
+        data: JSON.stringify(data.Truck1),
+        success: function () {
+          console.log("data saved to firebase");
+        },
+        error: function(error) {
+          console.log("data save failed to firebase: "+error);
+        }
+      });
+
+      //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
+      $('.error').text('Truck1 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
     }
 
     if(data.Truck2.shock>2.8){
-      alert("Contract breached: Truck 2 shock level crossed 2.5G threshold");
+    //  alert("Contract breached: Truck 2 shock level crossed 2.5G threshold");
+      $('.error').text('Truck2 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
     }
 
     if(data.Truck3.shock>2.8){
-      alert("Contract breached: Truck 3 shock level crossed 2.5G threshold");
+    //  alert("Contract breached: Truck 3 shock level crossed 2.5G threshold");
+      $('.error').text('Truck3 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
     }
 
     if(data.Truck4.shock>2.8){
-      alert("Contract breached: Truck 4 shock level crossed 2.5G threshold");
+    //  alert("Contract breached: Truck 4 shock level crossed 2.5G threshold");
+      $('.error').text('Truck4 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
     }
 
 
       var html = build_a_tx(data, i);
       $('.txContent').append(html);
 
-      if(i>2){
+      if(i>4){
           $('.txContent').children('li:first').remove();
         }
 
@@ -249,13 +265,32 @@ function onLoad(){
   	// html +=			'<div class="marbleName">' + id  + '</div>';
   	// html +=		'</p>';
   	// html +=	'</div>';
+    var strErrorSpan =  '<span class="err">';
+    var strSpan = '<span>'
+    var T1Span = strSpan;
+    var T2Span = strSpan;
+    var T3Span = strSpan;
+    var T4Span = strSpan;
+
+    if(data.Truck1.shock > 2.8){
+      T1Span = strErrorSpan;
+    }
+    if(data.Truck2.shock > 2.8){
+      T2Span = strErrorSpan;
+    }
+    if(data.Truck3.shock > 2.8){
+      T3Span = strErrorSpan;
+    }
+    if(data.Truck4.shock > 2.8){
+      T4Span = strErrorSpan;
+    }
 
     html += '<li class="timeline">';
     html +=   '<div class="txCount">TX ' + (Number(pos)) + '</div>';
-    html +=   '<span>Truck 1: </span><span>' + data.Truck1.shock + '</span> <div></div>'
-    html +=   '<span>Truck 2: </span><span>' + data.Truck2.shock + '</span> <div></div>'
-    html +=   '<span>Truck 3: </span><span>' + data.Truck3.shock + '</span> <div></div>'
-    html +=   '<span>Truck 4: </span><span>' + data.Truck4.shock + '</span> <div></div>'
+    html +=   T1Span + 'Truck 1: </span>' + T1Span + data.Truck1.shock + '</span> <div></div>'
+    html +=   T2Span + 'Truck 2: </span>' + T2Span + data.Truck2.shock + '</span> <div></div>'
+    html +=   T3Span + 'Truck 3: </span>' + T3Span + data.Truck3.shock + '</span> <div></div>'
+    html +=   T4Span + 'Truck 4: </span>' + T4Span + data.Truck4.shock + '</span> <div></div>'
     html += '</li>'
 
   	return html;

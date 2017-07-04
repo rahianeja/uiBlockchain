@@ -199,7 +199,7 @@ label {
   text-align: left; }
 
 .error {
-  color: #cc0000 !important; }
+  color: red !important; }
 
 .valid {
   color: green !important; }
