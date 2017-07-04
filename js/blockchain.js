@@ -14,6 +14,26 @@ $(document).on('ready', function () {
 
 });
 
+function initChatbot(){// cirrently not to be used as this is just medium for communication
+  //Init chatbot
+  var bin = {"project":"4b52b4fb-1aa7-4ef0-b529-b6ee57427cd6"};
+    $.ajax({
+      url: 'https://conversation.pullstring.ai/v1/conversation',
+      type: "POST",
+      data: JSON.stringify(bin),
+      contentType: "application/json",
+      headers: {
+      "Authorization": "Bearer b38b9820-cf32-46a1-9639-986a74ae33af"
+      },
+      success: function (res) {
+      localStorage.setItem("conv",res.conversation);
+        console.log("chatbot initialized");
+      },
+      error: function(error) {
+        console.log("chatbot init failed: "+error);
+      }
+    });
+}
 function startTheShow() {
     moveBlocks = setInterval(function () {
         move_on_down();
@@ -63,14 +83,14 @@ function build_block(id) {										//build and append the block html
 }
 
 function move_on_down() {										//move the blocks left
-    if (uiBlocksCount > 7) {
+    if (uiBlocksCount > 12) {
         $('.block:first').animate({ opacity: 0 }, 800, function () {
             $('.block:first').remove();
         });
         $('.block').animate({ left: '-=' + block_left_px }, 800, function () { });
         uiBlocksCount--;
 
-        if (uiBlocksCount > 7) {								//fast mode, clear the blocks!
+        if (uiBlocksCount > 12) {								//fast mode, clear the blocks!
             clearInterval(moveBlocks);
             setTimeout(function () {
                 move_on_down();
@@ -174,34 +194,22 @@ function onLoad(){
 
     $("#truck1Title").text(data.Truck1.name).append( "<div class='truckData topMargin'><b> Status: </b>"+data.Truck1.status+"</div>" )
     .append( "<div class='truckData'> Time: "+getJSTime(data.Truck1.time)+"</div>" )
-    .append( "<div class='truckData'> Address: "+data.Truck1.address+"</div>" )
+    .append( "<div class='truckData addHeight'> Address: "+data.Truck1.address+"</div>" )
     .append( "<div class='truckData'> Shock: "+data.Truck1.shock+"</div>" );
     $("#truck2Title").text(data.Truck2.name).append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
     .append( "<div class='truckData'> Time: "+getJSTime(data.Truck2.time)+"</div>" )
-    .append( "<div class='truckData'> Address: "+data.Truck2.address+"</div>" )
+    .append( "<div class='truckData addHeight'> Address: "+data.Truck2.address+"</div>" )
     .append( "<div class='truckData'> Shock: "+data.Truck2.shock+"</div>" );
     $("#truck3Title").text(data.Truck3.name).append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
     .append( "<div class='truckData'> Time: "+getJSTime(data.Truck3.time)+"</div>" )
-    .append( "<div class='truckData'> Address: "+data.Truck3.address+"</div>" )
+    .append( "<div class='truckData addHeight'> Address: "+data.Truck3.address+"</div>" )
     .append( "<div class='truckData'> Shock: "+data.Truck3.shock+"</div>" );
     $("#truck4Title").text(data.Truck4.name).append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
     .append( "<div class='truckData'> Time: "+getJSTime(data.Truck4.time)+"</div>" )
-    .append( "<div class='truckData'> Address: "+data.Truck4.address+"</div>" )
+    .append( "<div class='truckData addHeight'> Address: "+data.Truck4.address+"</div>" )
     .append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" );
 
     if(data.Truck1.shock>2.8){
-      $.ajax({
-        url: 'https://jleiphonebook.firebaseio.com/.json',
-        type: "POST",
-        data: JSON.stringify(data.Truck1),
-        success: function () {
-          console.log("data saved to firebase");
-        },
-        error: function(error) {
-          console.log("data save failed to firebase: "+error);
-        }
-      });
-
       //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
       $('.error').text('Truck1 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
     }

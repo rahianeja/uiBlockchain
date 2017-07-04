@@ -12,7 +12,10 @@
   <script src="js/blockchain.js"></script>
   <script src="js/funk.js"></script>
   <script src="js/bchain.js"></script>
+  <script src="js/jquery.flip.js"></script>
   <script>
+
+  //initChatbot();
 
 
   $( document ).ready(function() {
@@ -69,24 +72,32 @@
 
     </nav>
     <!-- Content panel -->
+
+
     <div id="content" class="bgDark" data-anijs="if: DOMContentLoaded, on: document, do: $addClass menu-active, to: .container">
       <div class="menu-trigger" data-anijs="if: click, do: $toggleClass menu-active, to: .container">
         <i class="fa fa-bars"></i>
       </div>
       <span class="titlePadBottom">Blockchain Monitor</span><span class="notif error" style='display:none;z-index:1'>Event Created</span>
-
+<!-- <div id="card"> -->
+  <!-- <div class="front"> -->
       <div id="containerForTrucks" class="square">
           <h2 class="whtTitle">Trucks - 4/4</h2><br>
           <img src="images/3.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <img src="images/2.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
-          <img src="images/transkd.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <img src="images/truck.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <img src="images/3.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck1Title"> Truck 1</div>
           <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck2Title"> Truck 2 </div>
           <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck3Title"> Truck 3 </div>
           <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck4Title"> Truck 4 </div>
-      </div>
+      <!-- </div> -->
+        </div>
 
+          <!-- <div class="back">
+           Back content
+         </div> -->
+<!-- </div> -->
     </div>
 
     <div id="footerPanel" style="height: 9%;">
@@ -97,6 +108,7 @@
 
 
     </div>
+
 
 
   </div>
