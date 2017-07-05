@@ -209,33 +209,56 @@ function onLoad(){
     .append( "<div class='truckData addHeight'> Address: "+data.Truck4.address+"</div>" )
     .append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" );
 
-    if(data.Truck1.shock>2.8){
-      //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
-      $('.error').text('Truck1 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
-    }
+      setTimeout(function(){
+      if(data.Truck1.shock>2.8){
+        console.log("inside truck1 issue");
+        //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
+        $('.error').text('Truck1 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
+        var notifhtml = buildNotifHtml(data.Truck1, i, "Truck1");
+        $('.notifContent').append(notifhtml);
+        makeBlockRed();
 
-    if(data.Truck2.shock>2.8){
-    //  alert("Contract breached: Truck 2 shock level crossed 2.5G threshold");
-      $('.error').text('Truck2 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
-    }
+      }
 
-    if(data.Truck3.shock>2.8){
-    //  alert("Contract breached: Truck 3 shock level crossed 2.5G threshold");
-      $('.error').text('Truck3 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
-    }
+      if(data.Truck2.shock>2.8){
+        console.log("inside truck2 issue");
+      //  alert("Contract breached: Truck 2 shock level crossed 2.5G threshold");
+        $('.error').text('Truck2 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
+        var notifhtml = buildNotifHtml(data.Truck2, i, "Truck2");
+        $('.notifContent').append(notifhtml);
+        makeBlockRed();
+      }
 
-    if(data.Truck4.shock>2.8){
-    //  alert("Contract breached: Truck 4 shock level crossed 2.5G threshold");
-      $('.error').text('Truck4 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
-    }
+      if(data.Truck3.shock>2.8){
+        console.log("inside truck3 issue");
+      //  alert("Contract breached: Truck 3 shock level crossed 2.5G threshold");
+        $('.error').text('Truck3 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
+        var notifhtml = buildNotifHtml(data.Truck3, i, "Truck3");
+        $('.notifContent').append(notifhtml);
+        makeBlockRed();
+      }
+
+      if(data.Truck4.shock>2.8){
+        console.log("inside truck4 issue");
+      //  alert("Contract breached: Truck 4 shock level crossed 2.5G threshold");
+        $('.error').text('Truck4 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
+        var notifhtml = buildNotifHtml(data.Truck4, i , "Truck4");
+        $('.notifContent').append(notifhtml);
+        makeBlockRed();
+      }
 
 
-      var html = build_a_tx(data, i);
-      $('.txContent').append(html);
+        var html = build_a_tx(data, i);
+        $('.txContent').append(html);
 
-      if(i>4){
-          $('.txContent').children('li:first').remove();
-        }
+        if(i>4){
+            $('.txContent').children('li:first').remove();
+
+          }
+
+ }, 600);
+
+
 
 
 
@@ -248,6 +271,42 @@ function onLoad(){
   //     }});
   // }
 
+  function makeBlockRed(){
+    $('.lastblock').css({"border-color": "red"});
+    $('.lastblock').css({"background": "pink"});
+  }
+
+function buildNotifHtml(data, pos, truck) {
+  var html = '';
+  var T1Span = '<span>'
+  html += '<li class="timeline voil">';
+    html +=   '<div class="txCount">TX ' + (Number(pos)) + '</div>';
+  html +=   T1Span + truck + ' </span>' + T1Span + data.shock + '</span> <div></div>'
+  html +=   T1Span + getJSTime(data.time) + '</span> <div></div>'
+  html +=   T1Span + 'SHOCK </span>' + T1Span + data.shock + '</span> <div></div>'
+  html += '</li>'
+
+  return html;
+
+
+
+  function getJSTime(unix_timestamp){
+    // Create a new JavaScript Date object based on the timestamp
+  // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+  var date = new Date(unix_timestamp*1000);
+  // Hours part from the timestamp
+  var hours = date.getHours();
+  // Minutes part from the timestamp
+  var minutes = "0" + date.getMinutes();
+  // Seconds part from the timestamp
+  var seconds = "0" + date.getSeconds();
+
+  // Will display time in 10:30:23 format
+  var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+  return formattedTime;
+
+  }
+}
 
   //build a tx history div
   function build_a_tx(data, pos) {
@@ -293,7 +352,7 @@ function onLoad(){
       T4Span = strErrorSpan;
     }
 
-    html += '<li class="timeline">';
+    html += '<li class="timeline"  >';
     html +=   '<div class="txCount">TX ' + (Number(pos)) + '</div>';
     html +=   T1Span + 'Truck 1: </span>' + T1Span + data.Truck1.shock + '</span> <div></div>'
     html +=   T2Span + 'Truck 2: </span>' + T2Span + data.Truck2.shock + '</span> <div></div>'
@@ -305,7 +364,6 @@ function onLoad(){
 
 
   }
-
 
 
   window.setInterval(function(){
