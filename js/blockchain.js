@@ -109,7 +109,7 @@ function onLoad(){
   localStorage.setItem("chainHeight",0);
   var i = 1;
   function checkBlock(){
-    $.ajax({url: "http://10.70.1.8:7050/chain", success: function(result){
+    $.ajax({url: "http://neoplatform.bcone.com/chain", success: function(result){
      chainHeight = result.height;
     if(chainHeight != null){
       if(localStorage.getItem("chainHeight")>0 && localStorage.getItem("chainHeight") != chainHeight) {
@@ -138,7 +138,7 @@ function onLoad(){
 
 
   function fetchTransaction(i){
-    var chainQueryURL = "http://10.70.1.8:7050/chaincode";
+    var chainQueryURL = "http://neoplatform.bcone.com/chaincode";
     var responseJson = null;
 
     var jsonData = {}
