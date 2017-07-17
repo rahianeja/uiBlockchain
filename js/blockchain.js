@@ -210,6 +210,12 @@ function onLoad(){
     .append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" );
 
       setTimeout(function(){
+        var threshold = 2.8/3*100;
+      updateDonutChart('#truck1', data.Truck1.shock/3*100, true);
+      updateDonutChart('#truck2', data.Truck2.shock/3*100, true);
+      updateDonutChart('#truck3', data.Truck3.shock/3*100, true);
+      updateDonutChart('#truck4', data.Truck4.shock/3*100, true);
+
       if(data.Truck1.shock>2.8){
         console.log("inside truck1 issue");
         //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
