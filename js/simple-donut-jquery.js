@@ -32,5 +32,9 @@ function updateDonutChart (el, percent, donut) {
     }
     $(el + ' .num').text(percent);
     $(el + ' .left-side').css('transform', 'rotate(' + deg + 'deg)');
-    
+
+    if (percent > 93.3) {
+      $(el + ' .right-side').css('border-color', '#d9534f');
+      $(el + ' .left-side').css('border-color', '#d9534f');
+    }
 }
