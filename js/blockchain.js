@@ -194,30 +194,30 @@ function onLoad(){
 
     $("#truck1Title").text(data.Truck1.name).append( "<div class='truckData topMargin'><b> Status: </b>"+data.Truck1.status+"</div>" )
     .append( "<div class='truckData'> Time: "+getJSTime(data.Truck1.time)+"</div>" )
-    .append( "<div class='truckData addHeight'> Address: "+data.Truck1.address+"</div>" )
-    .append( "<div class='truckData'> Shock: "+data.Truck1.shock+"</div>" )
+  //  .append( "<div class='truckData addHeight'> Address: "+data.Truck1.address+"</div>" )
+  //  .append( "<div class='truckData'> Shock: "+data.Truck1.shock+"</div>" )
     .append("<div id='truck1' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>");
     $("#truck2Title").text(data.Truck2.name).append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
     .append( "<div class='truckData'> Time: "+getJSTime(data.Truck2.time)+"</div>" )
-    .append( "<div class='truckData addHeight'> Address: "+data.Truck2.address+"</div>" )
-    .append( "<div class='truckData'> Shock: "+data.Truck2.shock+"</div>" )
+  //  .append( "<div class='truckData addHeight'> Address: "+data.Truck2.address+"</div>" )
+  //  .append( "<div class='truckData'> Shock: "+data.Truck2.shock+"</div>" )
     .append("<div id='truck2' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>");
     $("#truck3Title").text(data.Truck3.name).append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
     .append( "<div class='truckData'> Time: "+getJSTime(data.Truck3.time)+"</div>" )
-    .append( "<div class='truckData addHeight'> Address: "+data.Truck3.address+"</div>" )
-    .append( "<div class='truckData'> Shock: "+data.Truck3.shock+"</div>" )
+  //  .append( "<div class='truckData addHeight'> Address: "+data.Truck3.address+"</div>" )
+    //.append( "<div class='truckData'> Shock: "+data.Truck3.shock+"</div>" )
     .append("<div id='truck3' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>");
     $("#truck4Title").text(data.Truck4.name).append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
     .append( "<div class='truckData'> Time: "+getJSTime(data.Truck4.time)+"</div>" )
-    .append( "<div class='truckData addHeight'> Address: "+data.Truck4.address+"</div>" )
-    .append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" )
+    //.append( "<div class='truckData addHeight'> Address: "+data.Truck4.address+"</div>" )
+    //.append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" )
     .append("<div id='truck4' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>");
       setTimeout(function(){
         var threshold = 2.8/3*100;
-      updateDonutChart('#truck1', data.Truck1.shock/3*100, true);
-      updateDonutChart('#truck2', data.Truck2.shock/3*100, true);
-      updateDonutChart('#truck3', data.Truck3.shock/3*100, true);
-      updateDonutChart('#truck4', data.Truck4.shock/3*100, true);
+      updateDonutChart('#truck1', Math.floor(data.Truck1.shock/3*100), true);
+      updateDonutChart('#truck2', Math.floor(data.Truck2.shock/3*100), true);
+      updateDonutChart('#truck3', Math.floor(data.Truck3.shock/3*100), true);
+      updateDonutChart('#truck4', Math.floor(data.Truck4.shock/3*100), true);
 
       if(data.Truck1.shock>2.8){
         console.log("inside truck1 issue");
