@@ -385,6 +385,12 @@ border-right: 3px solid #454F5C
   position: relative;
 left: -650px;
 }
+#genBill{
+  margin-left: 200px;
+/* width: 30px; */
+min-width: 30px !important;
+margin-top: 21px;
+}
 
 .container.menu-active nav#slide-menu ul {
   left: 0px;
