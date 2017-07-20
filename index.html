@@ -15,10 +15,16 @@
   <script src="js/bchain.js"></script>
   <script src="js/simple-donut-jquery.js"></script>
   <link rel="stylesheet" href="css/simple-donut.css" type="text/css">
-
+  <link href="css/jquery.lineProgressbar.css" rel="stylesheet">
+  <script src="js/jquery.lineProgressbar.js"></script>
   <script>
 
   //initChatbot();
+
+  function myMap() {
+
+  }
+
 
     function w3_close() {
         document.getElementById("mySidebar").style.display = "none !important";
@@ -41,6 +47,7 @@
   });
 
   </script>
+
   </head>
 
 <body>
@@ -55,7 +62,7 @@ Blockchain Transactions</title>
   <div class="container center">
      <!-- Navigation -->
     <nav id="slide-menu">
-      <h2 class="sideTitleHeading">Transactions</h2>
+      <h2 class="sideTitleHeading">Billing</h2>
 
       <div class="sideContent">
         <ul class="txContent"></ul>
@@ -90,6 +97,7 @@ Blockchain Transactions</title>
 
     <div id="content" class="bgDark" data-anijs="if: DOMContentLoaded, on: document, do: $addClass menu-active, to: .container">
 
+
       <div class="w3-sidebar w3-bar-block w3-collapse w3-card-2 w3-animate-right" style="background-color: rgba(0, 0, 0, 0.5);color: white; width:200px;right:0;" id="mySidebar">
       <input type="button" class="fa fa-file w3-button w3-large w3-hide-large" onclick="w3_close()"></input>
       <h2 class="notifTitle">Violations</h2>
@@ -98,9 +106,9 @@ Blockchain Transactions</title>
       </div>
 
 
-      <div class="menu-trigger" data-anijs="if: click, do: $toggleClass menu-active, to: .container">
+      <!-- <div class="menu-trigger" data-anijs="if: click, do: $toggleClass menu-active, to: .container">
         <i class="fa fa-bars"></i>
-      </div>
+      </div> -->
       <span style="padding-right:3px; padding-top: 3px; display:inline-block; ">
 
       <img class="manImg" src="images/neo.png" ></img>
@@ -110,17 +118,33 @@ Blockchain Transactions</title>
 <!-- <div id="card"> -->
   <!-- <div class="front"> -->
       <div id="containerForTrucks" class="square">       </div>
-      <div id="nonTransparent">
-          <h2 class="whtTitle">Trucks - 4/4</h2><br>
-          <img src="images/3.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
-          <img src="images/2.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
-          <img src="images/truck.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
-          <img src="images/3.png"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
-          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck1Title"> Truck 1</div>
 
-          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck2Title"> Truck 2 </div>
-          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck3Title"> Truck 3 </div>
-          <div class="truckBox" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck4Title"> Truck 4 </div>
+      <div id="containerForTrucks" class="square secondCont">       </div>
+
+      <div id="containerForTrucks" class="square thirdCont">       </div>
+
+      <div id="containerForTrucks" class="square fourthCont">       </div>
+
+      <div id="nonTransparent">
+          <h2 class="widthOfTrucks"> </h2><br>
+
+
+          <img src="images/3.png" class="img1Style"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <div id="truck1BelowTitle"></div>
+          <div class="truckBox1" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck1Title"> </div>
+
+          <img src="images/2.png" class="img2Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <div id="truck2BelowTitle"></div>
+          <div class="truckBox2" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck2Title"> </div>
+
+          <img src="images/2.png" class="img3Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <div id="truck3BelowTitle"></div>
+          <div class="truckBox3" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck3Title"> </div>
+
+          <img src="images/3.png" class="img4Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <div id="truck4BelowTitle"></div>
+          <div class="truckBox4" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck4Title"> </div>
+
       <!-- </div> -->
     </div>
 
@@ -130,7 +154,7 @@ Blockchain Transactions</title>
 <!-- </div> -->
     </div>
 
-    <div id="footerPanel" style="height: 9%;">
+    <div id="footerPanel" style="height: 7.5%;">
         <div id="blockWrap">
             <div id="blockLegend" style="padding-top: .5%;">BLOCKS</div>
             <div id="details"></div>
@@ -152,4 +176,5 @@ Blockchain Transactions</title>
 
 
 </body>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 </html>

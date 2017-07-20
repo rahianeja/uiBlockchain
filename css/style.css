@@ -14,8 +14,9 @@ body {
 
 .txContent{
   position: absolute;
-left: 18px !important;
-top: 132px;
+left: 28px !important;
+top: 40px;
+width:218px;
 color: darkgrey;
 }
 h1, h2, h3 {
@@ -56,20 +57,35 @@ h1, h2, h3 {
   margin-bottom: 25px;
   font-size: -webkit-xxx-large;
 font-weight: bold;
-color: white;
-    margin-left: -100px;
+color: black;
+    margin-left: -400px;
+    opacity: 0.9;
+
 }
 
+.img1Style{
+  position: absolute;
+      left: -28px;
+}
 .manImg{
   position: absolute;
-  left:61px;
+  left:0px;
   top:5px;
+  width:115px;
 }
 
 .timeline{
-  border: 1px dotted;
-  padding: 10px;
-      margin-top: 10px;
+border: 1px dotted;
+padding: 10px;
+background-color: white;
+/* opacity: 0.5; */
+border: 1px solid grey;
+/* border-top: 20px solid transparent; */
+color: black;
+margin: 10px;
+border-top: 10px solid #343D48;
+
+
 }
 
 
@@ -83,13 +99,142 @@ color: white;
 }
 
 .sideTitleHeading{
-  padding:30px;
+  padding-left: 28px;
+padding-top: 17px;
   position: absolute;
     left: 40px;
-    top: 49px;
+    top: 0px;
+    color: black;
+}
+
+#T1line{
+  /*border: 1px solid rgb(195, 205, 89);*/
+  border: 1px solid darkslategrey;
+      transform: rotate(30deg);
+      position: relative;
+      left: 175px;
+      top: -31px;
+}
+
+#T2line{
+  /*border: 1px solid #40C0B8;*/
+  border: 1px solid darkslategrey;
+      transform: rotate(30deg);
+      position: relative;
+      left: 175px;
+      top: -31px;
+}
+
+#T3line{
+  /*border: 1px solid #FCB823;*/
+  border: 1px solid darkslategrey;
+      transform: rotate(30deg);
+      position: relative;
+      left: 175px;
+      top: -41px;
+}
+
+#T4line{
+  /*border: 1px solid #0080B1;*/
+  border: 1px solid darkslategrey;
+      transform: rotate(30deg);
+      position: relative;
+      left: 180px;
+      top: -51px;
+      width: 100px;
+}
+.tempT1{
+  width: 100px;
+    position: relative;
+    top: -87px;
+    left: 180px;
+}
+.mapT1{
+  width: 100px;
+    position: relative;
+    top: -167px;
+    left: 230px;
+    font-size: small;
+}
+.paletT1{
+  width: 100px;
+  position: relative;
+  top: -274px;
+  left: 420px;
+  height: 120px;
+}
+
+.tempT2{
+  width: 100px;
+    position: relative;
+    top: -87px;
+    left: 180px;
+}
+
+.mapT2{
+  width: 100px;
+    position: relative;
+    top: -167px;
+    left: 280px;
+    font-size: small;
+}
+
+.paletT2{
+  width: 100px;
+  position: relative;
+  top: -274px;
+  left: 420px;
+  height: 120px;
+}
+
+.tempT3{
+  width: 100px;
+    position: relative;
+    top: -87px;
+    left: 180px;
+}
+
+.mapT3{
+  width: 100px;
+    position: relative;
+    top: -167px;
+    left: 280px;
+    font-size: small;
+}
+
+.paletT3{
+  width: 100px;
+  position: relative;
+  top: -274px;
+  left: 420px;
+  height: 120px;
+}
+
+.tempT4{
+  width: 100px;
+    position: relative;
+    top: -87px;
+    left: 180px;
+}
+.mapT4{
+  width: 100px;
+    position: relative;
+    top: -167px;
+    left: 280px;
+    font-size: small;
+}
+.paletT4{
+  width: 100px;
+  position: relative;
+  top: -274px;
+  left: 420px;
+  height: 120px;
 }
 
 
+.thermoHt{
+  height:71px;
+}
 /*
   Menu
 */
@@ -106,6 +251,7 @@ nav#slide-menu {
   -moz-transition: all 300ms;
   -webkit-transition: all 300ms;
   transition: all 300ms;
+  background: url(../images/net.png) !important;
 }
 nav#slide-menu > ul {
   display: block;
@@ -119,14 +265,58 @@ nav#slide-menu > ul {
 }
 .bgDark{
   text-align: center;
-  background: url(file:///C:/Users/rohit.aneja/Desktop/rise2.jpg) !important;
+  background-color: #5C6F7B !important;
     background-size: cover !important;
     background-repeat: no-repeat  !important;
     background-position: center center !important;
 }
+#truck1BelowTitle{
+  position: absolute;
+    top: 105px;
+    color: white;
+    left: -26px;
+}
+
+#truck2BelowTitle{
+  position: absolute;
+    top: 245px;
+    color: white;
+    left: -26px;
+}
+
+#truck3BelowTitle{
+  position: absolute;
+    top: 405px;
+    color: white;
+    left: -26px;
+}
+
+#truck4BelowTitle{
+  position: absolute;
+    top: 565px;
+    color: white;
+    left: -26px;
+}
+
+.secondCont{
+  top:223px
+}
+
+.thirdCont{
+  top:378px
+}
+
+.fourthCont{
+  top: 530px
+}
+
 #containerForTrucks{
-  opacity: 0.5 !important;
-  height: 466px;
+  opacity: 0.6 !important;
+  height: 130px;
+  border-top-right-radius: 80px;
+border-bottom-right-radius: 80px;
+position: absolute;
+left:0px;
 }
 #nonTransparent{
   position: absolute;
@@ -139,6 +329,7 @@ nav#slide-menu > ul li {
   color: #dfe5eb;
   padding: 6px 0;
   cursor: pointer;
+
 }
 nav#slide-menu > ul li:hover {
   color: #59e9df;
@@ -220,15 +411,17 @@ top: 20px;
   margin-bottom: 10px !important;
 }
 .square {
-  background-color: #636A73;
-width: 70%;
+  background-color: black;
+width: 800px;
 padding: 30px;
 padding-right: 0px;
 padding-left: 29px;
 }
 .bntNotif{
-  margin-left: 11px;
+  margin-left: 350px;
     border-radius: 11px;
+    opacity: 0.5;
+    background-color: black !important  ;
 }
 .square h1 {
     color: #fff;
@@ -245,6 +438,81 @@ color: white;
 border-right: 10px solid #636A73;
     border: 1px;
 
+}
+
+
+.truckBox1{
+  position: absolute;
+    left: 115px;
+
+    width:200px;
+
+
+  text-align: center;
+  color: white;
+  border-right: 10px solid #636A73;
+      border: 1px;
+}
+
+
+.truckBox2{
+  position: absolute;
+    left: 115px;
+    top:160px;
+    width:200px;
+
+
+  text-align: center;
+  color: white;
+  border-right: 10px solid #636A73;
+      border: 1px;
+}
+
+.truckBox3{
+  position: absolute;
+    left: 115px;
+    top:320px;
+    width:200px;
+
+
+  text-align: center;
+  color: white;
+  border-right: 10px solid #636A73;
+      border: 1px;
+}
+.widthOfTrucks{
+  width:150px
+}
+
+.truckBox4{
+  position: absolute;
+    left: 115px;
+    top:470px;
+    width:200px;
+
+
+  text-align: center;
+  color: white;
+  border-right: 10px solid #636A73;
+      border: 1px;
+}
+
+.img2Style{
+  position: absolute;
+left: -24px;
+top: 160px;
+}
+
+.img3Style{
+  position: absolute;
+left: -24px;
+top: 320px;
+}
+
+.img4Style{
+  position: absolute;
+left: -24px;
+top: 480px;
 }
 
 .smallerFont{
@@ -336,16 +604,17 @@ border-right: 10px solid #636A73;
   Content
 */
 div#content {
+  border-bottom: 1px solid white;
   overflow: auto !important;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 88%;
+  height: 93%;
   padding: 60px;
   padding-top: 13px;
   overflow: scroll;
-  background: #333B47;
+  background: url(../images/net.png);
   border-radius: 0;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -418,4 +687,71 @@ body{
 .container{
    margin-top: 50px;
   width: 50%;
+}
+
+
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+
+
+
+    width: 280px;
+    height: 450px;
+    overflow: hidden;
+    top: 40px;
+    left: 410px;
+}
+
+
+
+
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }

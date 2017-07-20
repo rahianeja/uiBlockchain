@@ -192,26 +192,83 @@ function onLoad(){
       }
 
 
-    $("#truck1Title").text(data.Truck1.name).append( "<div class='truckData topMargin'><b> Status: </b>"+data.Truck1.status+"</div>" )
-    .append( "<div class='truckData'> Time: "+getJSTime(data.Truck1.time)+"</div>" )
+    $("#truck1Title").html('');
+    $("#truck1BelowTitle").text(data.Truck1.name)
+    $("#truck1Title")//.append( "<div class='truckData topMargin'><b> Status: </b>"+data.Truck1.status+"</div>" )
+  //  .append( "<div class='truckData'> Time: "+getJSTime(data.Truck1.time)+"</div>" )
   //  .append( "<div class='truckData addHeight'> Address: "+data.Truck1.address+"</div>" )
   //  .append( "<div class='truckData'> Shock: "+data.Truck1.shock+"</div>" )
-    .append("<div id='truck1' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>");
-    $("#truck2Title").text(data.Truck2.name).append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
-    .append( "<div class='truckData'> Time: "+getJSTime(data.Truck2.time)+"</div>" )
+    .append("<div id='truck1' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
+    .append("<div id='temp' class='tempT1'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
+    .append("<div id='temp' class='mapT1 popup' >   <img class='thermoHt'  src=" + "images/map.png" + ">    </img>    <div class='popuptext' id='myPopup'  >    </div>            </div>")
+    .append("<div id='temp' class='paletT1'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
+
+    $("#truck2Title").html('');
+    $("#truck2BelowTitle").text(data.Truck2.name)
+    $("#truck2Title")//.append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
+  //  .append( "<div class='truckData'> Time: "+getJSTime(data.Truck2.time)+"</div>" )
   //  .append( "<div class='truckData addHeight'> Address: "+data.Truck2.address+"</div>" )
   //  .append( "<div class='truckData'> Shock: "+data.Truck2.shock+"</div>" )
-    .append("<div id='truck2' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>");
-    $("#truck3Title").text(data.Truck3.name).append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
-    .append( "<div class='truckData'> Time: "+getJSTime(data.Truck3.time)+"</div>" )
+    .append("<div id='truck2' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
+    .append("<div id='temp' class='tempT2'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
+    .append("<div id='temp' class='mapT2'>   <img class='thermoHt' src=" + "images/map.png" + "> </img> </div>")
+    .append("<div id='temp' class='paletT2'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
+
+      $("#truck3Title").html('');
+    $("#truck3BelowTitle").text(data.Truck3.name)
+    $("#truck3Title")//.append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
+  //  .append( "<div class='truckData'> Time: "+getJSTime(data.Truck3.time)+"</div>" )
   //  .append( "<div class='truckData addHeight'> Address: "+data.Truck3.address+"</div>" )
     //.append( "<div class='truckData'> Shock: "+data.Truck3.shock+"</div>" )
-    .append("<div id='truck3' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>");
-    $("#truck4Title").text(data.Truck4.name).append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
-    .append( "<div class='truckData'> Time: "+getJSTime(data.Truck4.time)+"</div>" )
+    .append("<div id='truck3' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
+.append("<div id='temp' class='tempT3'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
+.append("<div id='temp' class='mapT3'>   <img class='thermoHt' src=" + "images/map.png" + "> </img>  </div>")
+.append("<div id='temp' class='paletT3'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
+
+  $("#truck4Title").html('');
+    $("#truck4BelowTitle").text(data.Truck4.name)
+    $("#truck4Title")//.append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
+  //  .append( "<div class='truckData'> Time: "+getJSTime(data.Truck4.time)+"</div>" )
     //.append( "<div class='truckData addHeight'> Address: "+data.Truck4.address+"</div>" )
     //.append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" )
-    .append("<div id='truck4' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>");
+    .append("<div id='truck4' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
+.append("<div id='temp' class='tempT4'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
+.append("<div id='temp' class='mapT4'>   <img class='thermoHt' src=" + "images/map.png" + "> </img>  </div>")
+.append("<div id='temp' class='paletT4'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
+      //Setting temperature
+
+
+      function myMap(){
+          var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+
+      }
+
+      $(".mapT1").click(function(){myMap()});
+      $(".mapT2").click(function(){myMap()});
+      $(".mapT3").click(function(){myMap()});
+      $(".mapT4").click(function(){myMap()});
+
+
+
+      var mapOptions = {
+          center: new google.maps.LatLng(51.5, -0.12),
+          zoom: 10,
+          mapTypeId: google.maps.MapTypeId.HYBRID
+      }
+    var map = new google.maps.Map(document.getElementById("myPopup"), mapOptions);
+
+
+      $(".tempT1").append("<br>2 degrees");
+        $(".tempT2").append("<br>5 degrees");
+          $(".tempT3").append("<br>1.4 degrees");
+            $(".tempT4").append("<br>2.2 degrees");
+
+            $(".mapT1").append("<br>"+data.Truck2.address);
+            $(".mapT2").append("<br>"+data.Truck2.address);
+            $(".mapT3").append("<br>"+data.Truck2.address);
+            $(".mapT4").append("<br>"+data.Truck2.address);
+
       setTimeout(function(){
         var threshold = 2.8/3*100;
       updateDonutChart('#truck1', Math.floor(data.Truck1.shock/3*100), true);
@@ -257,21 +314,160 @@ function onLoad(){
       }
 
 
-        var html = build_a_tx(data, i);
-        $('.txContent').append(html);
-
-        if(i>4){
-            $('.txContent').children('li:first').remove();
-
-          }
+      updateLeftMenuBlock(data);
+      //Transaction appended to transaction areaa on every call
+        // var html = build_a_tx(data, i);
+        // $('.txContent').append(html);
+        //
+        // if(i>4){
+        //     $('.txContent').children('li:first').remove();
+        //
+        //   }
 
  }, 600);
-
-
-
-
-
   }
+
+      function updateLeftMenuBlock(data){
+        $('.txContent').children('li').remove();
+
+
+        var html = '';
+
+        html += '<li class="timeline"  >';
+        html +=   '</span>' + 'Payment Advance' + '</span> <div></div>'
+        html += '<div id="T1Adv"></div>';
+
+        html +=  '</span>' + 'Violations' + '</span> <div></div>'
+        html +=  '<div id="T1Violations"></div>';
+
+        html +=   '</span>' + 'Penalty Cut' + '</span> <div></div>'
+        html += '<div id="T1Penalty"></div>';
+
+        html += '<div id="T1line"></div>'
+
+        html += '</li>'
+
+        $('.txContent').append(html);
+
+        $('#T1Adv').LineProgressbar({
+          fillBackgroundColor: '#C3CD59',
+          radius: '9px',
+          percentage: 30 // in %
+        });
+        $('#T1Violations').LineProgressbar({
+          fillBackgroundColor: '#C3CD59',
+          radius: '9px',
+          percentage: 30 // in %
+        });
+        $('#T1Penalty').LineProgressbar({
+          fillBackgroundColor: 'rgb(217, 83, 79)',
+          radius: '9px',
+          percentage: 2 // in %
+        });
+
+        var html = ''
+
+        html += '<li class="timeline"  >';
+        html +=   '</span>' + 'Payment Advance' + '</span> <div></div>'
+        html += '<div id="T2Adv"></div>';
+
+        html +=  '</span>' + 'Violations' + '</span> <div></div>'
+        html +=  '<div id="T2Violations"></div>';
+
+        html +=   '</span>' + 'Penalty Cut' + '</span> <div></div>'
+        html += '<div id="T2Penalty"></div>';
+        html += '<div id="T2line"></div>'
+
+        html += '</li>'
+
+        $('.txContent').append(html);
+
+        $('#T2Adv').LineProgressbar({
+          fillBackgroundColor: '#40C0B8',
+          radius: '9px',
+          percentage: 30 // in %
+        });
+        $('#T2Violations').LineProgressbar({
+            fillBackgroundColor: '#40C0B8',
+            radius: '9px',
+          percentage: 30 // in %
+        });
+        $('#T2Penalty').LineProgressbar({
+          fillBackgroundColor: 'rgb(217, 83, 79)',
+          radius: '9px',
+          percentage: 2 // in %
+        });
+
+var html = ''
+
+        html += '<li class="timeline"  >';
+        html +=   '</span>' + 'Payment Advance' + '</span> <div></div>'
+        html += '<div id="T3Adv"></div>';
+
+        html +=  '</span>' + 'Violations' + '</span> <div></div>'
+        html +=  '<div id="T3Violations"></div>';
+
+        html +=   '</span>' + 'Penalty Cut' + '</span> <div></div>'
+        html += '<div id="T3Penalty"></div>';
+        html += '<div id="T3line"></div>'
+
+        html += '</li>'
+
+        $('.txContent').append(html);
+
+        $('#T3Adv').LineProgressbar({
+            fillBackgroundColor: '#FCB823',
+            radius: '9px',
+          percentage: 30 // in %
+        });
+        $('#T3Violations').LineProgressbar({
+            fillBackgroundColor: '#FCB823',
+            radius: '9px',
+          percentage: 30 // in %
+        });
+        $('#T3Penalty').LineProgressbar({
+        fillBackgroundColor: 'rgb(217, 83, 79)',
+        radius: '9px',
+          percentage: 2 // in %
+        });
+
+
+var html = ''
+
+        html += '<li class="timeline"  >';
+        html +=   '</span>' + 'Payment Advance' + '</span> <div></div>'
+        html += '<div id="T4Adv"></div>';
+
+        html +=  '</span>' + 'Violations' + '</span> <div></div>'
+        html +=  '<div id="T4Violations"></div>';
+
+        html +=   '</span>' + 'Penalty Cut' + '</span> <div></div>'
+        html += '<div id="T4Penalty"></div>';
+        html += '<div id="T4line"></div>'
+
+        html += '</li>'
+
+        $('.txContent').append(html);
+
+        $('#T4Adv').LineProgressbar({
+            fillBackgroundColor: '#0080B1',
+            ShowProgressCount: true,
+            radius: '9px',
+          percentage: 30 // in %
+        });
+        $('#T4Violations').LineProgressbar({
+            fillBackgroundColor: '#0080B1',
+            radius: '9px',
+          percentage: 30 // in %
+        });
+        $('#T4Penalty').LineProgressbar({
+          fillBackgroundColor: 'rgb(217, 83, 79)',
+radius: '9px',
+          percentage: 2 // in %
+        });
+
+
+      }
   // function callBlocks(chainHeight){
   //   var lastBlock = chainHeight-1;
   //   var blockUrl = "http://10.70.1.8:7050/chain/blocks/" + lastBlock;
