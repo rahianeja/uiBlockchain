@@ -514,10 +514,11 @@ function buildNotifHtml(data, pos, truck) {
   var html = '';
   var T1Span = '<span>'
   html += '<li class="timeline voil">';
-    html +=   '<div class="txCount">TX ' + (Number(pos)) + '</div>';
-  html +=   T1Span + truck + ' </span>' + T1Span + data.shock + '</span> <div></div>'
-  html +=   T1Span + getJSTime(data.time) + '</span> <div></div>'
-  html +=   T1Span + 'SHOCK </span>' + T1Span + data.shock + '</span> <div></div>'
+  html +=   T1Span +'Time:' + getJSTime(data.time) + '</span> <div></div>'
+  //html += '<div class="txCount">TX ' + (Number(pos)) + '</div>';
+  //html +=   T1Span + truck + ' </span>' + T1Span + data.shock + '</span> <div></div>'
+
+  html +=   T1Span + 'Temperature Exceeded </span>' + T1Span + data.shock + 'degrees'+'</span> <div></div>'
   html += '</li>'
 
   return html;
