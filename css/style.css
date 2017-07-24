@@ -150,10 +150,10 @@ padding-top: 17px;
     left: 180px;
 }
 .mapT1{
-  width: 100px;
+  width: 144px;
     position: relative;
-    top: -167px;
-    left: 230px;
+    top: -193px;
+    left: 250px;
     font-size: small;
 }
 .paletT1{
@@ -172,10 +172,10 @@ padding-top: 17px;
 }
 
 .mapT2{
-  width: 100px;
+  width: 144px;
     position: relative;
-    top: -167px;
-    left: 280px;
+    top: -183px;
+    left: 276px;
     font-size: small;
 }
 
@@ -195,10 +195,10 @@ padding-top: 17px;
 }
 
 .mapT3{
-  width: 100px;
+  width: 144px;
     position: relative;
-    top: -167px;
-    left: 280px;
+    top: -183px;
+    left: 276px;
     font-size: small;
 }
 
@@ -217,11 +217,12 @@ padding-top: 17px;
     left: 180px;
 }
 .mapT4{
-  width: 100px;
+  width: 144px;
     position: relative;
-    top: -167px;
-    left: 280px;
+    top: -183px;
+    left: 276px;
     font-size: small;
+
 }
 .paletT4{
   width: 100px;
@@ -234,6 +235,11 @@ padding-top: 17px;
 
 .thermoHt{
   height:71px;
+}
+
+.mapHt{
+
+  height:59px;
 }
 /*
   Menu
@@ -275,6 +281,7 @@ nav#slide-menu > ul {
     top: 105px;
     color: white;
     left: -26px;
+    width: 192px;
 }
 
 #truck2BelowTitle{
@@ -282,6 +289,7 @@ nav#slide-menu > ul {
     top: 245px;
     color: white;
     left: -26px;
+    width: 192px;
 }
 
 #truck3BelowTitle{
@@ -289,6 +297,7 @@ nav#slide-menu > ul {
     top: 405px;
     color: white;
     left: -26px;
+    width: 192px;
 }
 
 #truck4BelowTitle{
@@ -296,6 +305,7 @@ nav#slide-menu > ul {
     top: 565px;
     color: white;
     left: -26px;
+    width: 192px;
 }
 
 .secondCont{
@@ -383,7 +393,7 @@ border-right: 3px solid #454F5C
 #blockLegend{
   color: white;
   position: relative;
-left: -650px;
+left: -745px;
 }
 #genBill{
   margin-left: 200px;
@@ -481,6 +491,7 @@ border-right: 10px solid #636A73;
     left: 115px;
     top:320px;
     width:200px;
+    height:100px;
 
 
   text-align: center;
@@ -497,7 +508,7 @@ border-right: 10px solid #636A73;
     left: 115px;
     top:470px;
     width:200px;
-
+height:100px;
 
   text-align: center;
   color: white;
@@ -505,6 +516,9 @@ border-right: 10px solid #636A73;
       border: 1px;
 }
 
+.boldFont{
+  font-weight: bold;
+}
 .img2Style{
   position: absolute;
 left: -24px;

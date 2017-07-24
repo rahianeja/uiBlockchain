@@ -107,6 +107,16 @@ function onLoad(){
   var chainHeight = null;
   localStorage.clear();
   localStorage.setItem("chainHeight",0);
+  localStorage.setItem("violT1",0);
+  localStorage.setItem("violT2",0);
+  localStorage.setItem("violT3",0);
+  localStorage.setItem("violT4",0);
+
+  localStorage.setItem("penalT1",0);
+  localStorage.setItem("penalT2",0);
+  localStorage.setItem("penalT3",0);
+  localStorage.setItem("penalT4",0);
+
   var i = 1;
   function checkBlock(){
     $.ajax({url: "http://neoplatform.bcone.com/chain", success: function(result){
@@ -148,7 +158,8 @@ function onLoad(){
     var paramsData = {}
     paramsData.type = 1;
     paramsData.chaincodeID = {}
-    paramsData.chaincodeID.name = "9515e8035d5e8566fc2061e592572181a0c2d8143672d89177304c724b5f1c511dee56aee2b50e930ac3783ab8da8417aa51065e342bf3a3a150e1bfebde3c62"
+    //paramsData.chaincodeID.name = "9515e8035d5e8566fc2061e592572181a0c2d8143672d89177304c724b5f1c511dee56aee2b50e930ac3783ab8da8417aa51065e342bf3a3a150e1bfebde3c62"
+    paramsData.chaincodeID.name = "ee1e61882dd6604fd45fa7da14fdfa912d825923042f1cca81268ee7d13b443895f047cb9b436071d263d7d64f186b24133f81f62795799551df3cc9d744d2c0"
     paramsData.ctorMsg = {}
     paramsData.ctorMsg.function = "query";
     paramsData.ctorMsg.args = [];
@@ -200,7 +211,7 @@ function onLoad(){
   //  .append( "<div class='truckData'> Shock: "+data.Truck1.shock+"</div>" )
     .append("<div id='truck1' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
     .append("<div id='temp' class='tempT1'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
-    .append("<div id='temp' class='mapT1 popup' >   <img class='thermoHt'  src=" + "images/map.png" + ">    </img>    <div class='popuptext' id='myPopup'  >    </div>            </div>")
+    .append("<div id='temp' class='mapT1 popup' >   <img class='mapHt'  src=" + "images/loc1.png" + ">    </img>    <div class='popuptext' id='myPopup'  >    </div>            </div>")
     .append("<div id='temp' class='paletT1'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
 
     $("#truck2Title").html('');
@@ -211,7 +222,7 @@ function onLoad(){
   //  .append( "<div class='truckData'> Shock: "+data.Truck2.shock+"</div>" )
     .append("<div id='truck2' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
     .append("<div id='temp' class='tempT2'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
-    .append("<div id='temp' class='mapT2'>   <img class='thermoHt' src=" + "images/map.png" + "> </img> </div>")
+    .append("<div id='temp' class='mapT2'>   <img class='mapHt' src=" + "images/loc1.png" + "> </img> </div>")
     .append("<div id='temp' class='paletT2'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
 
       $("#truck3Title").html('');
@@ -222,7 +233,7 @@ function onLoad(){
     //.append( "<div class='truckData'> Shock: "+data.Truck3.shock+"</div>" )
     .append("<div id='truck3' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
 .append("<div id='temp' class='tempT3'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
-.append("<div id='temp' class='mapT3'>   <img class='thermoHt' src=" + "images/map.png" + "> </img>  </div>")
+.append("<div id='temp' class='mapT3'>   <img class='mapHt' src=" + "images/loc1.png" + "> </img>  </div>")
 .append("<div id='temp' class='paletT3'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
 
   $("#truck4Title").html('');
@@ -233,7 +244,7 @@ function onLoad(){
     //.append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" )
     .append("<div id='truck4' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
 .append("<div id='temp' class='tempT4'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
-.append("<div id='temp' class='mapT4'>   <img class='thermoHt' src=" + "images/map.png" + "> </img>  </div>")
+.append("<div id='temp' class='mapT4'>   <img class='mapHt' src=" + "images/loc1.png" + "> </img>  </div>")
 .append("<div id='temp' class='paletT4'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
       //Setting temperature
 
@@ -244,10 +255,11 @@ function onLoad(){
 
       }
 
-      $(".mapT1").click(function(){myMap()});
-      $(".mapT2").click(function(){myMap()});
-      $(".mapT3").click(function(){myMap()});
-      $(".mapT4").click(function(){myMap()});
+    // Enable below to show locations on the map
+    //  $(".mapT1").click(function(){myMap()});
+    //  $(".mapT2").click(function(){myMap()});
+    //  $(".mapT3").click(function(){myMap()});
+    //  $(".mapT4").click(function(){myMap()});
 
 
 
@@ -288,58 +300,113 @@ function onLoad(){
     var map = new google.maps.Map(document.getElementById("myPopup"), mapOptions);
 
 
-      $(".tempT1").append("<br>2 degrees");
-        $(".tempT2").append("<br>5 degrees");
-          $(".tempT3").append("<br>1.4 degrees");
-            $(".tempT4").append("<br>2.2 degrees");
+      $(".tempT1").append("<br>" + Math.round(data.Truck1.temp * 100) / 100  + " degrees");
+        $(".tempT2").append("<br>" + Math.round(data.Truck2.temp * 100) / 100 + " degrees");
+          $(".tempT3").append("<br>" + Math.round(data.Truck3.temp * 100) / 100 + " degrees");
+            $(".tempT4").append("<br>" + Math.round(data.Truck4.temp * 100) / 100 + " degrees");
 
-            $(".mapT1").append("<br>"+data.Truck2.address);
+            $(".mapT1").append("<br>"+data.Truck1.address);
             $(".mapT2").append("<br>"+data.Truck2.address);
-            $(".mapT3").append("<br>"+data.Truck2.address);
-            $(".mapT4").append("<br>"+data.Truck2.address);
+            $(".mapT3").append("<br>"+data.Truck3.address);
+            $(".mapT4").append("<br>"+data.Truck4.address);
 
       setTimeout(function(){
         var threshold = 2.8/3*100;
-      updateDonutChart('#truck1', Math.floor(data.Truck1.shock/3*100), true);
-      updateDonutChart('#truck2', Math.floor(data.Truck2.shock/3*100), true);
-      updateDonutChart('#truck3', Math.floor(data.Truck3.shock/3*100), true);
-      updateDonutChart('#truck4', Math.floor(data.Truck4.shock/3*100), true);
+      updateDonutChart('#truck1', data.Truck1.hum, true);
+      updateDonutChart('#truck2', data.Truck2.hum, true);
+      updateDonutChart('#truck3',data.Truck3.hum, true);
+      updateDonutChart('#truck4', data.Truck4.hum, true);
 
-      if(data.Truck1.shock>2.8){
+      if(data.Truck1.hum>65){
         console.log("inside truck1 issue");
         //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
         $('.error').text('Truck1 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtml(data.Truck1, i, "Truck1");
         $('.notifContent').append(notifhtml);
         makeBlockRed();
-
+        var violations = localStorage.getItem("violT1");
+        localStorage.setItem("violT1",++violations);
       }
 
-      if(data.Truck2.shock>2.8){
+      if(data.Truck2.hum>65){
         console.log("inside truck2 issue");
       //  alert("Contract breached: Truck 2 shock level crossed 2.5G threshold");
         $('.error').text('Truck2 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtml(data.Truck2, i, "Truck2");
         $('.notifContent').append(notifhtml);
         makeBlockRed();
+        var violations = localStorage.getItem("violT2");
+        localStorage.setItem("violT2",++violations);
       }
 
-      if(data.Truck3.shock>2.8){
+      if(data.Truck3.hum>65){
         console.log("inside truck3 issue");
       //  alert("Contract breached: Truck 3 shock level crossed 2.5G threshold");
         $('.error').text('Truck3 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtml(data.Truck3, i, "Truck3");
         $('.notifContent').append(notifhtml);
         makeBlockRed();
+        var violations = localStorage.getItem("violT3");
+        localStorage.setItem("violT3",++violations);
       }
 
-      if(data.Truck4.shock>2.8){
+      if(data.Truck4.hum>65){
         console.log("inside truck4 issue");
       //  alert("Contract breached: Truck 4 shock level crossed 2.5G threshold");
         $('.error').text('Truck4 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtml(data.Truck4, i , "Truck4");
         $('.notifContent').append(notifhtml);
         makeBlockRed();
+        var violations = localStorage.getItem("violT4");
+        localStorage.setItem("violT4",++violations);
+      }
+
+      if(data.Truck1.temp>75){
+        console.log("inside truck1 issue");
+        //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
+        $('.error').text('Truck1 has breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
+        var notifhtml = buildNotifHtmlTemp(data.Truck1, i, "Truck1");
+        $('.notifContent').append(notifhtml);
+        $('.tempT1').css({ "color": "rgb(256, 83, 79)","font-weight": "bold"});
+        makeBlockRed();
+        var violations = localStorage.getItem("violT1");
+        localStorage.setItem("violT1",++violations);
+      }
+
+      if(data.Truck2.temp>75){
+        console.log("inside truck1 issue");
+        //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
+        $('.error').text('Truck2 has breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
+        var notifhtml = buildNotifHtmlTemp(data.Truck2, i, "Truck2");
+        $('.notifContent').append(notifhtml);
+        $('.tempT2').css( {"color": "rgb(256, 83, 79)","font-weight": "bold"});
+        makeBlockRed();
+        var violations = localStorage.getItem("violT2");
+        localStorage.setItem("violT2",++violations);
+      }
+
+      if(data.Truck3.temp>75){
+        console.log("inside truck1 issue");
+        //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
+        $('.error').text('Truck3 has breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
+        var notifhtml = buildNotifHtmlTemp(data.Truck3, i, "Truck3");
+        $('.notifContent').append(notifhtml);
+        $('.tempT3').css( {"color": "rgb(256, 83, 79)","font-weight": "bold"});
+        makeBlockRed();
+        var violations = localStorage.getItem("violT3");
+        localStorage.setItem("violT3",++violations);
+      }
+
+      if(data.Truck4.temp>75){
+        console.log("inside truck1 issue");
+        //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
+        $('.error').text('Airplane has breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
+        var notifhtml = buildNotifHtmlTemp(data.Truck4, i, "Truck4");
+        $('.notifContent').append(notifhtml);
+        $('.tempT4').css({ "color": "rgb(256, 83, 79)","font-weight": "bold"});
+        makeBlockRed();
+        var violations = localStorage.getItem("violT4");
+        localStorage.setItem("violT4",++violations);
       }
 
 
@@ -381,17 +448,17 @@ function onLoad(){
         $('#T1Adv').LineProgressbar({
           fillBackgroundColor: '#C3CD59',
           radius: '9px',
-          percentage: 30 // in %
+          percentage: 3 // in %
         });
-        $('#T1Violations').LineProgressbar({
+        $('#T1Violations').LineProgressbarNum({
           fillBackgroundColor: '#C3CD59',
           radius: '9px',
-          percentage: 30 // in %
+          percentage: parseInt(localStorage.getItem("violT1")) // in %
         });
         $('#T1Penalty').LineProgressbar({
           fillBackgroundColor: 'rgb(217, 83, 79)',
           radius: '9px',
-          percentage: 2 // in %
+          percentage: parseInt(localStorage.getItem("penalT1")) // in %
         });
 
         var html = ''
@@ -416,15 +483,15 @@ function onLoad(){
           radius: '9px',
           percentage: 30 // in %
         });
-        $('#T2Violations').LineProgressbar({
+        $('#T2Violations').LineProgressbarNum({
             fillBackgroundColor: '#40C0B8',
             radius: '9px',
-          percentage: 30 // in %
+          percentage: parseInt(localStorage.getItem("violT2")) // in %
         });
         $('#T2Penalty').LineProgressbar({
           fillBackgroundColor: 'rgb(217, 83, 79)',
           radius: '9px',
-          percentage: 2 // in %
+          percentage: parseInt(localStorage.getItem("penalT2"))  // in %
         });
 
 var html = ''
@@ -449,15 +516,15 @@ var html = ''
             radius: '9px',
           percentage: 30 // in %
         });
-        $('#T3Violations').LineProgressbar({
+        $('#T3Violations').LineProgressbarNum({
             fillBackgroundColor: '#FCB823',
             radius: '9px',
-          percentage: 30 // in %
+          percentage: parseInt(localStorage.getItem("violT3")) // in %
         });
         $('#T3Penalty').LineProgressbar({
         fillBackgroundColor: 'rgb(217, 83, 79)',
         radius: '9px',
-          percentage: 2 // in %
+          percentage: parseInt(localStorage.getItem("penalT3"))  // in %
         });
 
 
@@ -484,17 +551,33 @@ var html = ''
             radius: '9px',
           percentage: 30 // in %
         });
-        $('#T4Violations').LineProgressbar({
+        $('#T4Violations').LineProgressbarNum({
             fillBackgroundColor: '#0080B1',
             radius: '9px',
-          percentage: 30 // in %
+          percentage: parseInt(localStorage.getItem("violT4")) // in %
         });
         $('#T4Penalty').LineProgressbar({
           fillBackgroundColor: 'rgb(217, 83, 79)',
 radius: '9px',
-          percentage: 2 // in %
+          percentage: parseInt(localStorage.getItem("penalT4"))  // in %
         });
 
+        if(localStorage.getItem("violT1")=="10"){
+          localStorage.setItem("violT1","0");
+          localStorage.setItem("penalT1",parseInt(ocalStorage.getItem("penalT1")) + 2);
+        }
+        if(localStorage.getItem("violT2")=="10"){
+          localStorage.setItem("violT2","0");
+          localStorage.setItem("penalT2",parseInt(localStorage.getItem("penalT2")) + 2);
+        }
+        if(localStorage.getItem("violT3")=="10"){
+          localStorage.setItem("violT3","0");
+          localStorage.setItem("penalT3",parseInt(localStorage.getItem("penalT3")) + 2);
+        }
+        if(localStorage.getItem("violT4")=="10"){
+          localStorage.setItem("violT4","0");
+          localStorage.setItem("penalT4",parseInt(localStorage.getItem("penalT4")) + 2);
+        }
 
       }
   // function callBlocks(chainHeight){
@@ -512,12 +595,52 @@ radius: '9px',
 
 function buildNotifHtml(data, pos, truck) {
   var html = '';
+  if(truck=="Truck4"){
+    truck = "Airplane"
+  }
   var T1Span = '<span>'
   html += '<li class="timeline voil">';
-    html +=   '<div class="txCount">TX ' + (Number(pos)) + '</div>';
-  html +=   T1Span + truck + ' </span>' + T1Span + data.shock + '</span> <div></div>'
-  html +=   T1Span + getJSTime(data.time) + '</span> <div></div>'
-  html +=   T1Span + 'SHOCK </span>' + T1Span + data.shock + '</span> <div></div>'
+  html +=  '<b>' + '<span class="boldFont">' + getJSTime(data.time) + '</b>' +'</span> <div></div>'
+//    html +=   '<div class="txCount">TX ' + (Number(pos)) + '</div>';
+  html +=   T1Span + '<b>'+truck + '</b>  </span>' + T1Span + '</span> <div></div>'
+
+  html +=   T1Span + '<b>Humidity</b> </span>' + T1Span + Math.round(data.hum * 100) / 100 + '</span> <div></div>'
+  html += '</li>'
+
+  return html;
+
+
+
+  function getJSTime(unix_timestamp){
+    // Create a new JavaScript Date object based on the timestamp
+  // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+  var date = new Date(unix_timestamp*1000);
+  // Hours part from the timestamp
+  var hours = date.getHours();
+  // Minutes part from the timestamp
+  var minutes = "0" + date.getMinutes();
+  // Seconds part from the timestamp
+  var seconds = "0" + date.getSeconds();
+
+  // Will display time in 10:30:23 format
+  var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+  return formattedTime;
+
+  }
+}
+
+function buildNotifHtmlTemp(data, pos, truck) {
+  var html = '';
+  if(truck=="Truck4"){
+    truck = "Airplane"
+  }
+  var T1Span = '<span>'
+  html += '<li class="timeline voil">';
+  html +=  '<b>' + '<span class="boldFont">' + getJSTime(data.time) + '</b>' +'</span> <div></div>'
+//    html +=   '<div class="txCount">TX ' + (Number(pos)) + '</div>';
+  html +=   T1Span + '<b>'+truck + '</b>  </span>' + T1Span + '</span> <div></div>'
+
+  html +=   T1Span + '<b>Temperature</b> </span>' + T1Span + Math.round(data.temp * 100) / 100 + '</span> <div></div>'
   html += '</li>'
 
   return html;
