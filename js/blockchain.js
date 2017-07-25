@@ -119,7 +119,7 @@ function onLoad(){
 
   var i = 1;
   function checkBlock(){
-    $.ajax({url: "http://neoplatform.bcone.com/chain", success: function(result){
+    $.ajax({url: "https://neoplatform.bcone.com/chain", success: function(result){
      chainHeight = result.height;
     if(chainHeight != null){
       if(localStorage.getItem("chainHeight")>0 && localStorage.getItem("chainHeight") != chainHeight) {
@@ -148,7 +148,7 @@ function onLoad(){
 
 
   function fetchTransaction(i){
-    var chainQueryURL = "http://neoplatform.bcone.com/chaincode";
+    var chainQueryURL = "https://neoplatform.bcone.com/chaincode";
     var responseJson = null;
 
     var jsonData = {}
@@ -210,9 +210,9 @@ function onLoad(){
   //  .append( "<div class='truckData addHeight'> Address: "+data.Truck1.address+"</div>" )
   //  .append( "<div class='truckData'> Shock: "+data.Truck1.shock+"</div>" )
     .append("<div id='truck1' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
-    .append("<div id='temp' class='tempT1'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
+    .append("<div id='temp' class='tempT1'>   <img class='thermoHtMain' src=" + "images/thermometer.png" + ">  </div>")
     .append("<div id='temp' class='mapT1 popup' >   <img class='mapHt'  src=" + "images/loc1.png" + ">    </img>    <div class='popuptext' id='myPopup'  >    </div>            </div>")
-    .append("<div id='temp' class='paletT1'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
+    .append("<div id='temp' class='paletT1'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
 
     $("#truck2Title").html('');
     $("#truck2BelowTitle").text(data.Truck2.name)
@@ -221,9 +221,9 @@ function onLoad(){
   //  .append( "<div class='truckData addHeight'> Address: "+data.Truck2.address+"</div>" )
   //  .append( "<div class='truckData'> Shock: "+data.Truck2.shock+"</div>" )
     .append("<div id='truck2' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
-    .append("<div id='temp' class='tempT2'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
+    .append("<div id='temp' class='tempT2'>   <img class='thermoHtMain' src=" + "images/thermometer.png" + ">  </div>")
     .append("<div id='temp' class='mapT2'>   <img class='mapHt' src=" + "images/loc1.png" + "> </img> </div>")
-    .append("<div id='temp' class='paletT2'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
+    .append("<div id='temp' class='paletT2'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
 
       $("#truck3Title").html('');
     $("#truck3BelowTitle").text(data.Truck3.name)
@@ -232,9 +232,9 @@ function onLoad(){
   //  .append( "<div class='truckData addHeight'> Address: "+data.Truck3.address+"</div>" )
     //.append( "<div class='truckData'> Shock: "+data.Truck3.shock+"</div>" )
     .append("<div id='truck3' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
-.append("<div id='temp' class='tempT3'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
+.append("<div id='temp' class='tempT3'>   <img class='thermoHtMain' src=" + "images/thermometer.png" + ">  </div>")
 .append("<div id='temp' class='mapT3'>   <img class='mapHt' src=" + "images/loc1.png" + "> </img>  </div>")
-.append("<div id='temp' class='paletT3'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
+.append("<div id='temp' class='paletT3'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
 
   $("#truck4Title").html('');
     $("#truck4BelowTitle").text(data.Truck4.name)
@@ -243,9 +243,9 @@ function onLoad(){
     //.append( "<div class='truckData addHeight'> Address: "+data.Truck4.address+"</div>" )
     //.append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" )
     .append("<div id='truck4' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
-.append("<div id='temp' class='tempT4'>   <img class='thermoHt' src=" + "images/thermometer.png" + ">  </div>")
+.append("<div id='temp' class='tempT4'>   <img class='thermoHtMain' src=" + "images/thermometer.png" + ">  </div>")
 .append("<div id='temp' class='mapT4'>   <img class='mapHt' src=" + "images/loc1.png" + "> </img>  </div>")
-.append("<div id='temp' class='paletT4'>   <img class='thermoHt' src=" + "images/palet0.png" + ">  </div>");
+.append("<div id='temp' class='paletT4'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
       //Setting temperature
 
 

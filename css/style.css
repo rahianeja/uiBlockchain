@@ -234,6 +234,9 @@ padding-top: 17px;
 
 
 .thermoHt{
+  height:94px;
+}
+.thermoHtMain{
   height:71px;
 }
 
@@ -392,8 +395,44 @@ border-right: 3px solid #454F5C
 }
 #blockLegend{
   color: white;
-  position: relative;
-left: -745px;
+  position: absolute;
+    left: 0;
+}
+.box{
+  width:80px
+}
+.centerB{
+  margin-left: 130px;
+  margin-right: 130px;
+}
+.secondB{
+  margin-left:  347px;
+}
+.textBox1{
+position: absolute;
+top: 169px;
+left: 17px;
+}
+.textBox2{
+  position: absolute;
+  left: 234px;
+  top: 173px;
+
+}
+.textBox3{
+position: absolute;
+top: 169px;
+left: 449px;
+}
+.textBox11{
+  position: absolute;
+  top: 239px;
+  left: 17px;
+}
+.textBox13{
+  position: absolute;
+  top: 239px;
+  left: 449px;
 }
 #genBill{
   margin-left: 200px;
