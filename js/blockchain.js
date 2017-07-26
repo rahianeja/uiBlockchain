@@ -562,19 +562,19 @@ radius: '9px',
           percentage: parseInt(localStorage.getItem("penalT4"))  // in %
         });
 
-        if(localStorage.getItem("violT1")=="10"){
+        if(parseInt(localStorage.getItem("violT1"))>=10){
           localStorage.setItem("violT1","0");
           localStorage.setItem("penalT1",parseInt(ocalStorage.getItem("penalT1")) + 2);
         }
-        if(localStorage.getItem("violT2")=="10"){
+        if(parseInt(localStorage.getItem("violT2"))>=10){
           localStorage.setItem("violT2","0");
           localStorage.setItem("penalT2",parseInt(localStorage.getItem("penalT2")) + 2);
         }
-        if(localStorage.getItem("violT3")=="10"){
+        if(parseInt(localStorage.getItem("violT3"))>=10){
           localStorage.setItem("violT3","0");
           localStorage.setItem("penalT3",parseInt(localStorage.getItem("penalT3")) + 2);
         }
-        if(localStorage.getItem("violT4")=="10"){
+        if(parseInt(localStorage.getItem("violT4"))>=10){
           localStorage.setItem("violT4","0");
           localStorage.setItem("penalT4",parseInt(localStorage.getItem("penalT4")) + 2);
         }
