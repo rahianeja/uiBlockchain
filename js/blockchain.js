@@ -159,7 +159,9 @@ function onLoad(){
     paramsData.type = 1;
     paramsData.chaincodeID = {}
     //paramsData.chaincodeID.name = "9515e8035d5e8566fc2061e592572181a0c2d8143672d89177304c724b5f1c511dee56aee2b50e930ac3783ab8da8417aa51065e342bf3a3a150e1bfebde3c62"
-    paramsData.chaincodeID.name = "ee1e61882dd6604fd45fa7da14fdfa912d825923042f1cca81268ee7d13b443895f047cb9b436071d263d7d64f186b24133f81f62795799551df3cc9d744d2c0"
+   // paramsData.chaincodeID.name = "ee1e61882dd6604fd45fa7da14fdfa912d825923042f1cca81268ee7d13b443895f047cb9b436071d263d7d64f186b24133f81f62795799551df3cc9d744d2c0"
+    paramsData.chaincodeID.name = "ddbc1495253880dfc68c4bab5c0660f2742ec77b459507aeeb93a9ad9a18c60e091eeb59385bc8f5984984c00b34e14a996725d8b30650911ef9515c8117249c"
+      
     paramsData.ctorMsg = {}
     paramsData.ctorMsg.function = "query";
     paramsData.ctorMsg.args = [];
