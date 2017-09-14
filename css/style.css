@@ -12,6 +12,14 @@ body {
   text-align: center;
 }
 
+.fifthCont{
+  top: 679px;
+}
+
+.sixthCont{
+  top: 830px;
+}
+
 .txContent{
   position: absolute;
 left: 28px !important;
@@ -281,33 +289,33 @@ nav#slide-menu > ul {
 }
 #truck1BelowTitle{
   position: absolute;
-    top: 105px;
-    color: white;
-    left: -26px;
-    width: 192px;
+top: 16px;
+color: white;
+left: -64px;
+width: 192px;
 }
 
 #truck2BelowTitle{
   position: absolute;
-    top: 245px;
+    top: 177px;
     color: white;
-    left: -26px;
+    left: -56px;
     width: 192px;
 }
 
 #truck3BelowTitle{
   position: absolute;
-    top: 405px;
-    color: white;
-    left: -26px;
-    width: 192px;
+      top: 336px;
+      color: white;
+      left: -64px;
+      width: 192px;
 }
 
 #truck4BelowTitle{
   position: absolute;
-    top: 565px;
+    top: 488px;
     color: white;
-    left: -26px;
+    left: -55px;
     width: 192px;
 }
 
@@ -410,29 +418,34 @@ border-right: 3px solid #454F5C
 }
 .textBox1{
 position: absolute;
+font-weight: bold;
 top: 169px;
-left: 17px;
+left: 8px;
 }
 .textBox2{
   position: absolute;
-  left: 234px;
+  font-weight: bold;
+  left: 225px;
   top: 173px;
 
 }
 .textBox3{
 position: absolute;
+font-weight: bold;
 top: 169px;
-left: 449px;
+left: 440px;
 }
 .textBox11{
   position: absolute;
+  font-weight: bold;
   top: 239px;
-  left: 17px;
+  left: 8px;
 }
 .textBox13{
   position: absolute;
+  font-weight: bold;
   top: 239px;
-  left: 449px;
+  left: 440px;
 }
 #genBill{
   margin-left: 200px;
@@ -445,7 +458,23 @@ margin-top: 21px;
   left: 0px;
   opacity: 1;
 }
-
+.popuptext{
+  left: 30%;
+position: absolute;
+top: 45%;
+}
+.provImg{
+  margin-top: 60px;
+}
+.containerProv{
+  background-color: lightgrey;
+  position: absolute;
+  left: 25%;
+  height: 300px;
+  width: 700px;
+  border: 1px solid #888;
+  top:110px;
+}
 div#contentBottom {
   position: fixed;
     left: 284px;
@@ -560,20 +589,20 @@ height:100px;
 }
 .img2Style{
   position: absolute;
-left: -24px;
-top: 160px;
+    left: -24px;
+    top: 170px;
 }
 
 .img3Style{
   position: absolute;
 left: -24px;
-top: 320px;
+top: 325px;
 }
 
 .img4Style{
   position: absolute;
 left: -24px;
-top: 480px;
+top: 477px;
 }
 
 .smallerFont{
@@ -836,7 +865,7 @@ body{
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background-color: lightgray;
 margin: auto;
 padding: 20px;
 border: 1px solid #888;

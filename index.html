@@ -117,7 +117,7 @@ Blockchain Transactions</title>
       <img class="manImg" src="images/neo.png" ></img>
       <p data-anijs="if: onchange, on:ul.txContent, do: lightSpeedIn animated, to:ul.txContent li"></p>
     </span>
-      <span class="titlePadBottom">Track and Trace</span><span class="w3-button w3-xlarge bntNotif">&#9776;</span><span class="notif error" style='display:none;z-index:1'>Event Created</span>
+      <span class="titlePadBottom">Blockchain Monitor</span><span class="w3-button w3-xlarge bntNotif">&#9776;</span><span class="notif error" style='display:none;z-index:1'>Event Created</span>
 <!-- <div id="card"> -->
   <!-- <div class="front"> -->
       <div id="containerForTrucks" class="square">       </div>
@@ -128,23 +128,27 @@ Blockchain Transactions</title>
 
       <div id="containerForTrucks" class="square fourthCont">       </div>
 
+      <div id="containerForTrucks" class="square fifthCont">       </div>
+
+      <div id="containerForTrucks" class="square sixthCont">       </div>
+
       <div id="nonTransparent">
           <h2 class="widthOfTrucks"> </h2><br>
 
 
-          <img src="images/3.png" class="img1Style"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <img src="images/MilkVan.png" class="img1Style"  data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <div id="truck1BelowTitle"></div>
           <div class="truckBox1" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck1Title"> </div>
 
-          <img src="images/2.png" class="img2Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <img src="images/MilkVan.png" class="img2Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <div id="truck2BelowTitle"></div>
           <div class="truckBox2" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck2Title"> </div>
 
-          <img src="images/2.png" class="img3Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <img src="images/MilkVan.png" class="img3Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <div id="truck3BelowTitle"></div>
           <div class="truckBox3" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck3Title"> </div>
 
-          <img src="images/plane.png" class="img4Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <img src="images/MilkVan.png" class="img4Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
           <div id="truck4BelowTitle"></div>
           <div class="truckBox4" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck4Title"> </div>
 
@@ -156,30 +160,42 @@ Blockchain Transactions</title>
     <!-- Trigger/Open The Modal
 <button id="myBtn">Open Modal</button> -->
 
+  <!-- The Modal -->
+  <div id="trayProvenance" class="modal">
+    <!-- Modal content -->
+    <div class="provContent">
+      <span class="cls">&times;</span>
+      <div class="containerProv">
+        <button style="position: absolute;top: 22px;" onclick="backFromProv()">Back</button>
+      <img class="provImg" src="images/provenance.png"></img>
+    </div>
+    </div>
+  </div>
+
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <p><b>Pallets Data</b></p>
+        <p><b style="font-weight:800">Tray Stacks</b></p>
 
          <img class='thermoHt' src="images/palet0.png" > </img>
          <img class='thermoHt centerPalletDialog' src="images/palet0.png" > </img>
          <img class='thermoHt' src="images/palet0.png" > </img>
          <br>
-        <img class="box" src="images/Box.png"></img>
+        <img class="box" src="images/milkTray.png"></img>
       <span class="textBox1">T:45/H:73%</span>
-          <img class="box centerB" src="images/Box.png"></img >
+          <img class="box centerB" src="images/milkTray.png" onclick="clickedTrayStack('centerFirst')"></img >
           <span class="textBox2">T:67/H:82%</span>
-            <img class="box" src="images/Box.png"></img >
+            <img class="box" src="images/milkTray.png"></img >
             <span class="textBox3">T:55/H:53%</span>
             <br>
-              <img class="box" src="images/Box.png"></img >
+              <img class="box" src="images/milkTray.png"></img >
               <span class="textBox11">T:67/H:82%</span>
-                <img class="box secondB" src="images/Box.png"></img >
+                <img class="box secondB" src="images/milkTray.png"></img >
                 <span class="textBox13">T:67/H:82%</span>
                 <br
-                  <img class="box" src="images/Box.png"></img >
+                  <img class="box" src="images/milkTray.png"></img >
 
 
 

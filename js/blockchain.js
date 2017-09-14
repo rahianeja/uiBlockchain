@@ -9,6 +9,41 @@ var block_margin_px = 15;				//desired margin of the block
 var block_left_px = block_width_px + block_margin_px;
 var moveBlocks = null;					//interval var
 
+function clickedTrayStack(whichTrayStack){
+    showPopupProvenance(whichTrayStack);
+  }
+
+function backFromProv(){
+  var modalMain = document.getElementById('myModal');
+  modalMain.style.display = "block";
+  var mdl = document.getElementById("trayProvenance");
+   mdl.style.display = "none";
+}
+
+  function showPopupProvenance(trayStack){
+    switch (trayStack){
+      case "centerFirst":
+            var modalMain = document.getElementById('myModal');
+            modalMain.style.display = "none";
+            var modal = document.getElementById("trayProvenance");
+             modal.style.display = "block";
+
+             var spnCls = document.getElementsByClassName("cls")[0];
+             spnCls.onclick = function() {
+               var mdl = document.getElementById("trayProvenance");
+                mdl.style.display = "none";
+             }
+             window.onclick = function(event) {
+               var mdl = document.getElementById("trayProvenance");
+                 if (event.target == mdl) {
+                     mdl.style.display = "none";
+                 }
+             }
+      break;
+
+    }
+  }
+
 $(document).on('ready', function () {
     startTheShow();
 
@@ -161,7 +196,7 @@ function onLoad(){
     //paramsData.chaincodeID.name = "9515e8035d5e8566fc2061e592572181a0c2d8143672d89177304c724b5f1c511dee56aee2b50e930ac3783ab8da8417aa51065e342bf3a3a150e1bfebde3c62"
    // paramsData.chaincodeID.name = "ee1e61882dd6604fd45fa7da14fdfa912d825923042f1cca81268ee7d13b443895f047cb9b436071d263d7d64f186b24133f81f62795799551df3cc9d744d2c0"
     paramsData.chaincodeID.name = "ddbc1495253880dfc68c4bab5c0660f2742ec77b459507aeeb93a9ad9a18c60e091eeb59385bc8f5984984c00b34e14a996725d8b30650911ef9515c8117249c"
-      
+
     paramsData.ctorMsg = {}
     paramsData.ctorMsg.function = "query";
     paramsData.ctorMsg.args = [];
@@ -213,7 +248,7 @@ function onLoad(){
   //  .append( "<div class='truckData'> Shock: "+data.Truck1.shock+"</div>" )
     .append("<div id='truck1' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
     .append("<div id='temp' class='tempT1'>   <img class='thermoHtMain' src=" + "images/thermometer.png" + ">  </div>")
-    .append("<div id='temp' class='mapT1 popup' >   <img class='mapHt'  src=" + "images/loc1.png" + ">    </img>    <div class='popuptext' id='myPopup'  >    </div>            </div>")
+    .append("<div id='temp' class='mapT1 popup' >   <img class='mapHt'  src=" + "images/Location-01.png" + ">    </img>    <div class='popuptext' id='myPopup'  >    </div>            </div>")
     .append("<div id='temp' class='paletT1'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
 
     $("#truck2Title").html('');
@@ -224,7 +259,7 @@ function onLoad(){
   //  .append( "<div class='truckData'> Shock: "+data.Truck2.shock+"</div>" )
     .append("<div id='truck2' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
     .append("<div id='temp' class='tempT2'>   <img class='thermoHtMain' src=" + "images/thermometer.png" + ">  </div>")
-    .append("<div id='temp' class='mapT2'>   <img class='mapHt' src=" + "images/loc1.png" + "> </img> </div>")
+    .append("<div id='temp' class='mapT2'>   <img class='mapHt' src=" + "images/Location-01.png" + "> </img> </div>")
     .append("<div id='temp' class='paletT2'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
 
       $("#truck3Title").html('');
@@ -235,7 +270,7 @@ function onLoad(){
     //.append( "<div class='truckData'> Shock: "+data.Truck3.shock+"</div>" )
     .append("<div id='truck3' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
 .append("<div id='temp' class='tempT3'>   <img class='thermoHtMain' src=" + "images/thermometer.png" + ">  </div>")
-.append("<div id='temp' class='mapT3'>   <img class='mapHt' src=" + "images/loc1.png" + "> </img>  </div>")
+.append("<div id='temp' class='mapT3'>   <img class='mapHt' src=" + "images/Location-01.png" + "> </img>  </div>")
 .append("<div id='temp' class='paletT3'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
 
   $("#truck4Title").html('');
@@ -246,7 +281,7 @@ function onLoad(){
     //.append( "<div class='truckData'> Shock: "+data.Truck4.shock+"</div>" )
     .append("<div id='truck4' class='donut-size'>      <div class='pie-wrapper'>        <span class='label'>          <span class='num'>0</span><span class='smaller'>%</span>        </span>        <div class='pie'>          <div class='left-side half-circle'></div>          <div class='right-side half-circle'></div>        </div>        <div class='shadow'></div>      </div></div>")
 .append("<div id='temp' class='tempT4'>   <img class='thermoHtMain' src=" + "images/thermometer.png" + ">  </div>")
-.append("<div id='temp' class='mapT4'>   <img class='mapHt' src=" + "images/loc1.png" + "> </img>  </div>")
+.append("<div id='temp' class='mapT4'>   <img class='mapHt' src=" + "images/Location-01.png" + "> </img>  </div>")
 .append("<div id='temp' class='paletT4'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
       //Setting temperature
 
