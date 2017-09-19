@@ -241,7 +241,7 @@ function onLoad(){
 
 
     $("#truck1Title").html('');
-    $("#truck1BelowTitle").text(data.Truck1.name)
+    $("#truck1BelowTitle").text(data.Truck1.nameIndia)
     $("#truck1Title")//.append( "<div class='truckData topMargin'><b> Status: </b>"+data.Truck1.status+"</div>" )
   //  .append( "<div class='truckData'> Time: "+getJSTime(data.Truck1.time)+"</div>" )
   //  .append( "<div class='truckData addHeight'> Address: "+data.Truck1.address+"</div>" )
@@ -252,7 +252,7 @@ function onLoad(){
     .append("<div id='temp' class='paletT1'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
 
     $("#truck2Title").html('');
-    $("#truck2BelowTitle").text(data.Truck2.name)
+    $("#truck2BelowTitle").text(data.Truck2.nameIndia)
     $("#truck2Title")//.append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
   //  .append( "<div class='truckData'> Time: "+getJSTime(data.Truck2.time)+"</div>" )
   //  .append( "<div class='truckData addHeight'> Address: "+data.Truck2.address+"</div>" )
@@ -263,7 +263,7 @@ function onLoad(){
     .append("<div id='temp' class='paletT2'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
 
       $("#truck3Title").html('');
-    $("#truck3BelowTitle").text(data.Truck3.name)
+    $("#truck3BelowTitle").text(data.Truck3.nameIndia)
     $("#truck3Title")//.append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
   //  .append( "<div class='truckData'> Time: "+getJSTime(data.Truck3.time)+"</div>" )
   //  .append( "<div class='truckData addHeight'> Address: "+data.Truck3.address+"</div>" )
@@ -274,7 +274,7 @@ function onLoad(){
 .append("<div id='temp' class='paletT3'>   <img class='thermoHtMain' src=" + "images/palet0.png" + ">  </div>");
 
   $("#truck4Title").html('');
-    $("#truck4BelowTitle").text(data.Truck4.name)
+    $("#truck4BelowTitle").text(data.Truck4.nameIndia)
     $("#truck4Title")//.append( "<div class='truckData topMargin'> Status: "+data.Truck2.status+"</div>" )
   //  .append( "<div class='truckData'> Time: "+getJSTime(data.Truck4.time)+"</div>" )
     //.append( "<div class='truckData addHeight'> Address: "+data.Truck4.address+"</div>" )
@@ -342,10 +342,10 @@ function onLoad(){
           $(".tempT3").append("<br>" + Math.round(data.Truck3.temp * 100) / 100 + " degrees");
             $(".tempT4").append("<br>" + Math.round(data.Truck4.temp * 100) / 100 + " degrees");
 
-            $(".mapT1").append("<br>"+data.Truck1.address);
-            $(".mapT2").append("<br>"+data.Truck2.address);
-            $(".mapT3").append("<br>"+data.Truck3.address);
-            $(".mapT4").append("<br>"+data.Truck4.address);
+            $(".mapT1").append("<br>"+data.Truck1.addressIndia);
+            $(".mapT2").append("<br>"+data.Truck2.addressIndia);
+            $(".mapT3").append("<br>"+data.Truck3.addressIndia);
+            $(".mapT4").append("<br>"+data.Truck4.addressIndia);
 
       setTimeout(function(){
         var threshold = 2.8/3*100;
@@ -357,7 +357,7 @@ function onLoad(){
       if(data.Truck1.hum>65){
         console.log("inside truck1 issue");
         //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
-        $('.error').text('Truck1 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
+        $('.error').text('Truck1 have breached contract').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtml(data.Truck1, i, "Truck1");
         $('.notifContent').append(notifhtml);
         makeBlockRed();
@@ -368,7 +368,7 @@ function onLoad(){
       if(data.Truck2.hum>65){
         console.log("inside truck2 issue");
       //  alert("Contract breached: Truck 2 shock level crossed 2.5G threshold");
-        $('.error').text('Truck2 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
+        $('.error').text('Truck2 have breached contract').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtml(data.Truck2, i, "Truck2");
         $('.notifContent').append(notifhtml);
         makeBlockRed();
@@ -379,7 +379,7 @@ function onLoad(){
       if(data.Truck3.hum>65){
         console.log("inside truck3 issue");
       //  alert("Contract breached: Truck 3 shock level crossed 2.5G threshold");
-        $('.error').text('Truck3 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
+        $('.error').text('Truck3 have breached contract').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtml(data.Truck3, i, "Truck3");
         $('.notifContent').append(notifhtml);
         makeBlockRed();
@@ -390,7 +390,7 @@ function onLoad(){
       if(data.Truck4.hum>65){
         console.log("inside truck4 issue");
       //  alert("Contract breached: Truck 4 shock level crossed 2.5G threshold");
-        $('.error').text('Truck4 has breached contract').fadeIn(400).delay(3000).fadeOut(800);
+        $('.error').text('Truck4 have breached contract').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtml(data.Truck4, i , "Truck4");
         $('.notifContent').append(notifhtml);
         makeBlockRed();
@@ -398,10 +398,10 @@ function onLoad(){
         localStorage.setItem("violT4",++violations);
       }
 
-      if(data.Truck1.temp>75){
-        console.log("inside truck1 issue");
+      if(data.Truck1.temp>40){
+
         //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
-        $('.error').text('Truck1 has breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
+        $('.error').text('Truck1 have breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtmlTemp(data.Truck1, i, "Truck1");
         $('.notifContent').append(notifhtml);
         $('.tempT1').css({ "color": "rgb(256, 83, 79)","font-weight": "bold"});
@@ -410,10 +410,10 @@ function onLoad(){
         localStorage.setItem("violT1",++violations);
       }
 
-      if(data.Truck2.temp>75){
-        console.log("inside truck1 issue");
+      if(data.Truck2.temp>40){
+
         //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
-        $('.error').text('Truck2 has breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
+        $('.error').text('Truck2 have breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtmlTemp(data.Truck2, i, "Truck2");
         $('.notifContent').append(notifhtml);
         $('.tempT2').css( {"color": "rgb(256, 83, 79)","font-weight": "bold"});
@@ -422,10 +422,10 @@ function onLoad(){
         localStorage.setItem("violT2",++violations);
       }
 
-      if(data.Truck3.temp>75){
-        console.log("inside truck1 issue");
+      if(data.Truck3.temp>40){
+
         //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
-        $('.error').text('Truck3 has breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
+        $('.error').text('Truck3 have breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtmlTemp(data.Truck3, i, "Truck3");
         $('.notifContent').append(notifhtml);
         $('.tempT3').css( {"color": "rgb(256, 83, 79)","font-weight": "bold"});
@@ -434,10 +434,10 @@ function onLoad(){
         localStorage.setItem("violT3",++violations);
       }
 
-      if(data.Truck4.temp>75){
-        console.log("inside truck1 issue");
+      if(data.Truck4.temp>40){
+
         //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
-        $('.error').text('Airplane has breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
+        $('.error').text('Truck4 have breached contract: Temperature exceeded').fadeIn(400).delay(3000).fadeOut(800);
         var notifhtml = buildNotifHtmlTemp(data.Truck4, i, "Truck4");
         $('.notifContent').append(notifhtml);
         $('.tempT4').css({ "color": "rgb(256, 83, 79)","font-weight": "bold"});
