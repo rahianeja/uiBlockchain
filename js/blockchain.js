@@ -8,16 +8,18 @@ var block_width_px = 32;				//width of the block in px (match this to css)
 var block_margin_px = 15;				//desired margin of the block
 var block_left_px = block_width_px + block_margin_px;
 var moveBlocks = null;					//interval var
+var allViolationsArray = [];
 
 function clickedTrayStack(whichTrayStack){
     showPopupProvenance(whichTrayStack);
   }
-
 function backFromProv(){
   var modalMain = document.getElementById('myModal');
   modalMain.style.display = "block";
   var mdl = document.getElementById("trayProvenance");
    mdl.style.display = "none";
+   var mdl = document.getElementById("trayProvenanceFail");
+    mdl.style.display = "none";
 }
 
   function showPopupProvenance(trayStack){
@@ -40,12 +42,31 @@ function backFromProv(){
                  }
              }
       break;
+      case "rightThird":
+      var modalMain = document.getElementById('myModal');
+      modalMain.style.display = "none";
+      var modal = document.getElementById("trayProvenanceFail");
+       modal.style.display = "block";
+
+       var spnCls = document.getElementsByClassName("cls")[0];
+       spnCls.onclick = function() {
+         var mdl = document.getElementById("trayProvenanceFail");
+          mdl.style.display = "none";
+       }
+       window.onclick = function(event) {
+         var mdl = document.getElementById("trayProvenanceFail");
+           if (event.target == mdl) {
+               mdl.style.display = "none";
+           }
+       }
+       break;
 
     }
   }
 
 $(document).on('ready', function () {
     startTheShow();
+
 
 });
 
@@ -354,6 +375,8 @@ function onLoad(){
       updateDonutChart('#truck3',data.Truck3.hum, true);
       updateDonutChart('#truck4', data.Truck4.hum, true);
 
+      allViolationsArray.push({'Time':getJSTime(Date.now()),'T1':Math.round(data.Truck1.temp * 100) / 100 ,'T2':Math.round(data.Truck2.temp * 100) / 100, 'T3':Math.round(data.Truck3.temp * 100) / 100,'T4':Math.round(data.Truck3.temp * 100) / 100});
+
       if(data.Truck1.hum>65){
         console.log("inside truck1 issue");
         //alert("Contract breached: Truck 1 shock level crossed 2.5G threshold");
@@ -624,16 +647,45 @@ radius: '9px',
   //       console.log(result);
   //     }});
   // }
-
+var clickedBlock = 0;
   function makeBlockRed(){
     $('.lastblock').css({"border-color": "red"});
     $('.lastblock').css({"background": "pink"});
+    $('.block').mousedown(function(a,b,c){
+      var control = $(this)[0];
+      console.log(control.style.background)
+      if(control.style.background=="pink" && (control.style.width==""||control.style.width=="30px"))
+      {
+        $(this).css('width','100px');
+        $(this).css('height','150px');
+        $(this).css('top','-153px');
+
+        var intBlock = parseInt($(this).text());
+        clickedBlock = intBlock;
+        $(this).text("Time:"+allViolationsArray[intBlock-1].Time + "\n" +"Van1:"+allViolationsArray[intBlock-1].T1+ "\n" +"Van2:"+allViolationsArray[intBlock-1].T2+ "\n" +"Plant:"+allViolationsArray[intBlock-1].T3+ "\n" +"Storage:"+allViolationsArray[intBlock-1].T4);
+        console.log(intBlock);
+      } else {
+        $(this).css('width','30px');
+        $(this).css('height','30px');
+        $(this).css('top','0');
+
+        $(this).text(clickedBlock);
+        console.log(intBlock);
+      }
+    //  alert( $('.notifContent')[0]);
+      a.stopImmediatePropagation();
+
+
+    })
   }
 
 function buildNotifHtml(data, pos, truck) {
   var html = '';
   if(truck=="Truck4"){
-    truck = "Airplane"
+    truck = "Cold Storage"
+  }
+  if(truck=="Truck3"){
+    truck = "Plant"
   }
   var T1Span = '<span>'
   html += '<li class="timeline voil">';
@@ -669,7 +721,10 @@ function buildNotifHtml(data, pos, truck) {
 function buildNotifHtmlTemp(data, pos, truck) {
   var html = '';
   if(truck=="Truck4"){
-    truck = "Airplane"
+    truck = "Cold Storage"
+  }
+  if(truck=="Truck3"){
+    truck = "Plant"
   }
   var T1Span = '<span>'
   html += '<li class="timeline voil">';

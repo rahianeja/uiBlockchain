@@ -110,7 +110,7 @@ border-top: 10px solid #343D48;
   padding-left: 28px;
 padding-top: 17px;
   position: absolute;
-    left: 40px;
+    left: 10px;
     top: 0px;
     color: black;
 }
@@ -311,9 +311,25 @@ width: 192px;
       width: 192px;
 }
 
+#plantTitle{
+  position: absolute;
+      top: 314px;
+      color: white;
+      left: -64px;
+      width: 192px;
+}
+
 #truck4BelowTitle{
   position: absolute;
     top: 488px;
+    color: white;
+    left: -55px;
+    width: 192px;
+}
+
+#storageTitle{
+  position: absolute;
+    top: 459px;
     color: white;
     left: -55px;
     width: 192px;
@@ -595,14 +611,16 @@ height:100px;
 
 .img3Style{
   position: absolute;
-left: -24px;
-top: 325px;
+  left: -9px;
+  top: 313px;
+  height: 128px;
 }
 
 .img4Style{
   position: absolute;
-left: -24px;
-top: 477px;
+  left: -7px;
+  top: 473px;
+  height: 115px;
 }
 
 .smallerFont{

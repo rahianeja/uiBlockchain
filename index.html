@@ -64,7 +64,7 @@ Blockchain Transactions</title>
   <div class="container center">
      <!-- Navigation -->
     <nav id="slide-menu">
-      <h2 class="sideTitleHeading">Billing</h2>
+      <h2 class="sideTitleHeading">Smart Contracts</h2>
       <a href="invoice.html" target="_blank">
       <button id="genBill" onclick="showBill()">BILL</button></a>
       <div class="sideContent">
@@ -103,7 +103,7 @@ Blockchain Transactions</title>
 
       <div class="w3-sidebar w3-bar-block w3-collapse w3-card-2 w3-animate-right" style="background-color: rgba(0, 0, 0, 0.5);color: white; width:200px;right:0;" id="mySidebar">
       <input type="button" class="fa fa-file w3-button w3-large w3-hide-large" onclick="w3_close()"></input>
-      <h2 class="notifTitle">Contract Violations</h2>
+      <h2 class="notifTitle">Provenance (Violations)</h2>
 
       <ul class="notifContent"></ul>
       </div>
@@ -144,12 +144,14 @@ Blockchain Transactions</title>
           <div id="truck2BelowTitle"></div>
           <div class="truckBox2" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck2Title"> </div>
 
-          <img src="images/MilkVan.png" class="img3Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
-          <div id="truck3BelowTitle"></div>
+          <img src="images/plant.png" class="img3Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+          <!--<div id="truck3BelowTitle"></div>-->
+          <div id="plantTitle">Plant #11</div>
           <div class="truckBox3" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck3Title"> </div>
 
-          <img src="images/MilkVan.png" class="img4Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
-          <div id="truck4BelowTitle"></div>
+          <img src="images/coldStorage.png" class="img4Style" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated"></img>
+        <!--  <div id="truck4BelowTitle"></div>-->
+        <div id="storageTitle">Cold Storage #33</div>
           <div class="truckBox4" data-anijs="if: DOMContentLoaded, on: document, do: lightSpeedIn animated" id="truck4Title"> </div>
 
 
@@ -168,6 +170,18 @@ Blockchain Transactions</title>
       <div class="containerProv">
         <button style="position: absolute;top: 22px;" onclick="backFromProv()">Back</button>
       <img class="provImg" src="images/provenance.gif"></img>
+    </div>
+    </div>
+  </div>
+
+
+  <div id="trayProvenanceFail" class="modal">
+    <!-- Modal content -->
+    <div class="provContent">
+      <span class="cls">&times;</span>
+      <div class="containerProv">
+        <button style="position: absolute;top: 22px;" onclick="backFromProv()">Back</button>
+      <img class="provImg" src="images/provenanceFail.gif"></img>
     </div>
     </div>
   </div>
@@ -192,7 +206,7 @@ Blockchain Transactions</title>
             <br>
               <img class="box" src="images/milkTray.png"></img >
               <span class="textBox11">T:39/H:66%</span>
-                <img class="box secondB" src="images/milkTray.png"></img >
+                <img class="box secondB" src="images/milkTray.png" onclick="clickedTrayStack('rightThird')"></img >
                 <span class="textBox13">T:37/H:66%</span>
                 <br
                   <img class="box" src="images/milkTray.png"></img >
@@ -220,7 +234,6 @@ Blockchain Transactions</title>
   <!-- End example -->
 <script src="https://anijs.github.io/lib/anijs/anijs.js"></script>
 <script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom.js"></script>
-
 
  </body>
 <!--HTML and CSS by @jasonhowmans-->
